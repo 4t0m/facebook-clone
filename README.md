@@ -57,7 +57,7 @@ sufficient CSS styling:
 
 **Objective:** Add notifications.
 
-### Phase 6: - Likes (1 day)
+### Phase 6: Likes (1 day)
 
 **Objective:** Allow likes for posts/comments. Display count and send notifications.
 
