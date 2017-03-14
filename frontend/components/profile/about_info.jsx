@@ -28,8 +28,10 @@ class AboutInfo extends React.Component {
 
   saveEditButton() {
     if (this.props.user) {
-      if (this.props.currentUser && this.props.currentUser.id === this.props.user.id) {
-        return <div className="about-user-save" onClick={this.submitProfileEdit}>Save Changes</div>
+      if (this.props.currentUser &&
+        this.props.currentUser.id === this.props.user.id) {
+        return <div className="about-user-save"
+          onClick={this.submitProfileEdit}>Save Changes</div>;
       }
     }
   }
@@ -50,8 +52,10 @@ class AboutInfo extends React.Component {
       defaultValue={this.props.user.school} /></li>);
     workplace = (<li>Works at <input type="text" name="workplace"
       defaultValue={this.props.user.workplace} /></li>);
-    relationshipStatus = (<li>Relationship Status: <input type="text" name="relationship"
-      defaultValue={this.props.user.relationship} /></li>);
+    relationshipStatus = (<li>
+      Relationship Status: <input type="text" name="relationship"
+      defaultValue={this.props.user.relationship} />
+      </li>);
 
     return(
       <ul className="about-user">
@@ -85,7 +89,9 @@ class AboutInfo extends React.Component {
       workplace = (<li>Works at {this.props.user.workplace}</li>);
     }
     if(this.props.user.relationship){
-      relationshipStatus = (<li>Relationship Status: {this.props.user.relationship}</li>);
+      relationshipStatus = (
+        <li>Relationship Status: {this.props.user.relationship}</li>
+      );
     }
 
     return(
@@ -104,7 +110,8 @@ class AboutInfo extends React.Component {
     if (this.props.user){
       let aboutInfo, infoClass;
 
-      if (this.props.currentUser && this.props.currentUser.id === this.props.user.id) {
+      if (this.props.currentUser &&
+        this.props.currentUser.id === this.props.user.id) {
         aboutInfo = this.thisUserInfo();
         infoClass = "own-info";
       } else {

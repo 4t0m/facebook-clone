@@ -41,7 +41,7 @@ class TopSection extends React.Component {
       }
     } else {
       return (<div></div>)
-    }
+      }
   }
 
   updateCoverPicButton() {
@@ -74,6 +74,7 @@ class TopSection extends React.Component {
   }
 
   friendButton() {
+    debugger;
     if (this.props.friendRelationship) {
       if (this.props.friendRelationship.status === "active") {
         return(
