@@ -35,6 +35,17 @@ class User < ActiveRecord::Base
   has_attached_file :cover_pic, default_url: "no-cover.png"
   # validates_attachment_content_type :cover_pic, content_type: /\Aimage\/.*\Z/
 
+  # has_many :friendships_requested,
+  #   class_name: :frienships,
+  #   primary_key: :id,
+  #   foreign_key: :user1_id
+  #
+  #
+  # has_many :frienships_received,
+  #   class_name: :frienships,
+  #   primary_key: :id,
+  #   foreign_key: :user2_id
+
   after_initialize :ensure_session_token
 
   def password=(password)
@@ -57,6 +68,11 @@ class User < ActiveRecord::Base
     self.session_token = new_session_token
     self.save
     self.session_token
+  end
+
+  def friends
+    # does this work with an array?
+    User.where(id: Friendship.accepted_friendships(self))
   end
 
   private
