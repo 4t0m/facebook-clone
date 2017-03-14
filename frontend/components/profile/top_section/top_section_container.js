@@ -1,10 +1,9 @@
 import { connect } from 'react-redux';
-import { login, logout, signup } from '../../actions/session_actions';
 import { fetchUser, updateUser } from '../../actions/user_actions';
-import { findFriendship, acceptFriendship }
+import { findFriendship, createFriendship, removeFriendship, acceptFriendship }
   from '../../actions/friendship_actions';
 
-import Profile from './profile';
+import TopSection from './top_section';
 
 const mapStateToProps = ({ session, user, friendship }, ownProps) => ({
   currentUser: session.currentUser,
@@ -13,13 +12,15 @@ const mapStateToProps = ({ session, user, friendship }, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  logout: () => dispatch(logout()),
   fetchUser: id => dispatch(fetchUser(id)),
   updateUser: (data, id) => dispatch(updateUser(data, id)),
   findFriendship: friendUserId => dispatch(findFriendship(friendUserId)),
+  createFriendship: friendUserId => dispatch(createFriendship(friendUserId)),
+  removeFriendship: friendshipId => dispatch(removeFriendship(friendshipId)),
+  acceptFriendship: friendshipId => dispatch(acceptFriendship(friendshipId)),
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Profile);
+)(TopSection);

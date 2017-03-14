@@ -4,7 +4,7 @@ class TopSection extends React.Component {
   constructor(params) {
     super(params);
 
-    this.addFriend = this.addFriend.bind(this);
+    this.addFriendship = this.addFriendship.bind(this);
     this.removeFriendship = this.removeFriendship.bind(this);
     this.acceptFriendship = this.acceptFriendship.bind(this);
     this.uploadNewPhoto = this.uploadNewPhoto.bind(this);
@@ -12,8 +12,8 @@ class TopSection extends React.Component {
     this.uploadCoverPhoto = this.uploadCoverPhoto.bind(this);
   }
 
-  addFriend() {
-    this.props.addFriend(this.props.params.id);
+  addFriendship() {
+    this.props.addFriendship(this.props.params.id);
   }
 
   removeFriendship() {
@@ -100,7 +100,7 @@ class TopSection extends React.Component {
         if (this.props.params.id === this.props.currentUser.id) {
           return this.updateCoverPicButton();
         } else {
-          return(<div onClick={this.addFriend}>Add Friend</div>);
+          return(<div onClick={this.addFriendship}>Add Friend</div>);
         }
       }
     }
