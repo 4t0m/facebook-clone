@@ -78,18 +78,18 @@ class TopSection extends React.Component {
       if (this.props.friendship.status === "accepted") {
         return(
           <div onClick={this.removeFriendship}>
-            <div className="profile-cover-friend-status">Friends</div>
-            <div className="profile-cover-friend-toggle">Unfriend</div>
+            <div className="profile-cover-friend-status friended">Friends</div>
+            <div className="profile-cover-friend-toggle friended">Unfriend</div>
           </div>
         );
       } else {
         if (this.props.friendship.user1_id == this.props.params.id) {
-          return(<div onClick={this.acceptFriendship}>Accept Friendship</div>);
+          return(<div onClick={this.acceptFriendship}>Accept Request</div>);
         } else {
           return(
             <div onClick={this.removeFriendship}>
-              <div className="profile-cover-friend-status">Pending Request</div>
-              <div className="profile-cover-friend-toggle">Cancel Request</div>
+              <div className="profile-cover-friend-status pending">Pending Request</div>
+              <div className="profile-cover-friend-toggle pending">Cancel Request</div>
             </div>
           );
         }
@@ -110,9 +110,11 @@ class TopSection extends React.Component {
     const fullName = this.props.user ? `${this.props.user.fname} ${this.props.user.lname}` : "";
     const firstName = this.props.user ? `${this.props.user.fname}` : "";
     const userCoverPic = this.props.user ? this.props.user.cover_pic : "";
-    const coverStyle = {backgroundImage:"url("+userCoverPic+")"};
+    // const coverStyle = {backgroundImage:"url("+userCoverPic+")"};
+    const coverStyle = {};
     const userProfilePic = this.props.user ? this.props.user.profile_pic : "";
-    const profileStyle = {backgroundImage:"url("+userProfilePic+")"};
+    // const profileStyle = {backgroundImage:"url("+userProfilePic+")"};
+    const profileStyle = {};
 
     return (
       <div className="profile-top-section">
