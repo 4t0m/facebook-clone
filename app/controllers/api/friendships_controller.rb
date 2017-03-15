@@ -1,9 +1,19 @@
 class Api::FriendshipsController < ApplicationController
 
+  def index
+    if params[:user_id]
+      render json: Friendship.find_friendship(current_user.id, params[:user_id])
+    # else
+    #   @friendships = Friendship.where("status = 'unanswered' AND replier_id = ?", current_user.id)
+    #   @friendships.includes(:sender)
+    #   render :index
+    end
+  end
+
   def create
     render(json: ["Invalid user!"], status: 404) unless params.key?(:user_id)
     render(json: ["Not logged in!"], status: 403) unless current_user
-    
+
     if Friendship.friend_status(current_user.id, params[:user_id])
       render(json: ["Already friends"], status: 404)
     end

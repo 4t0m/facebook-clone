@@ -1,7 +1,7 @@
 import React from 'react';
 import { hashHistory, Link } from 'react-router';
 import HeaderContainer from '../header/header_container';
-import TopSectionContainer from './top_section';
+import TopSectionContainer from './top_section/top_section_container';
 import AboutInfo from './about_info';
 import Friends from './friends';
 
@@ -13,6 +13,8 @@ class Profile extends React.Component {
 
   componentDidMount() {
     this.props.fetchUser(this.props.params.id);
+    this.props.findFriendship(this.props.params.id);
+
   }
 
 
@@ -28,7 +30,7 @@ class Profile extends React.Component {
       <HeaderContainer />
       <div className="profile-container">
         <div className="profile-body">
-          <TopSectionContainer/>
+          <TopSectionContainer params={this.props.params}/>
           <AboutInfo user={this.props.user} currentUser={this.props.currentUser}
             updateUser={this.props.updateUser}/>
           <Friends />

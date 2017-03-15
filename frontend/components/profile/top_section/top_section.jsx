@@ -4,7 +4,7 @@ class TopSection extends React.Component {
   constructor(params) {
     super(params);
 
-    this.addFriendship = this.addFriendship.bind(this);
+    this.createFriendship = this.createFriendship.bind(this);
     this.removeFriendship = this.removeFriendship.bind(this);
     this.acceptFriendship = this.acceptFriendship.bind(this);
     this.uploadNewPhoto = this.uploadNewPhoto.bind(this);
@@ -12,16 +12,16 @@ class TopSection extends React.Component {
     this.uploadCoverPhoto = this.uploadCoverPhoto.bind(this);
   }
 
-  addFriendship() {
-    this.props.addFriendship(this.props.params.id);
+  createFriendship() {
+    this.props.createFriendship(this.props.params.id);
   }
 
   removeFriendship() {
-    this.props.removeFriend(this.props.friendRelationship.id);
+    this.props.removeFriendship(this.props.friendship.id);
   }
 
   acceptFriendship() {
-    this.props.acceptFriend(this.props.friendRelationship.id);
+    this.props.acceptFriendship(this.props.friendship.id);
   }
 
   updateProfilePicButton() {
@@ -74,9 +74,8 @@ class TopSection extends React.Component {
   }
 
   friendButton() {
-    debugger;
-    if (this.props.friendRelationship) {
-      if (this.props.friendRelationship.status === "active") {
+    if (this.props.friendship && this.props.friendship.id) {
+      if (this.props.friendship.status === "accepted") {
         return(
           <div onClick={this.removeFriendship}>
             <div className="profile-cover-friend-status">Friends</div>
@@ -84,7 +83,7 @@ class TopSection extends React.Component {
           </div>
         );
       } else {
-        if (this.props.friendRelationship.user1 === this.props.params.id) {
+        if (this.props.friendship.user1_id == this.props.params.id) {
           return(<div onClick={this.acceptFriendship}>Accept Friendship</div>);
         } else {
           return(
@@ -97,16 +96,17 @@ class TopSection extends React.Component {
       }
     } else {
       if (this.props.currentUser) {
-        if (this.props.params.id === this.props.currentUser.id) {
+        if (this.props.params.id == this.props.currentUser.id) {
           return this.updateCoverPicButton();
         } else {
-          return(<div onClick={this.addFriendship}>Add Friend</div>);
+          return(<div onClick={this.createFriendship}>Add Friend</div>);
         }
       }
     }
   }
 
   render() {
+    // debugger;
     const fullName = this.props.user ? `${this.props.user.fname} ${this.props.user.lname}` : "";
     const firstName = this.props.user ? `${this.props.user.fname}` : "";
     const userCoverPic = this.props.user ? this.props.user.cover_pic : "";
@@ -133,6 +133,9 @@ class TopSection extends React.Component {
           </div>
           <ul className="profile-navigation">
             <li><a>Timeline</a></li>
+            <li><a>About</a></li>
+            <li><a>Friends</a></li>
+
           </ul>
         </div>
       </div>

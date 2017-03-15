@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import { fetchUser, updateUser } from '../../actions/user_actions';
+import { fetchUser, updateUser } from '../../../actions/user_actions';
 import { findFriendship, createFriendship, removeFriendship, acceptFriendship }
-  from '../../actions/friendship_actions';
+  from '../../../actions/friendship_actions';
 
 import TopSection from './top_section';
 
