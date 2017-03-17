@@ -1,10 +1,13 @@
 class Api::PostsController < ApplicationController
 
   def index
+    # each of the below will hit different methods
     # if query param is wall do this
 
 
     # if query param is newsfeed do this
+
+    # if query param is own do this
   end
 
   def create
