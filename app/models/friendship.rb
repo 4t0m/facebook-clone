@@ -27,12 +27,14 @@ class Friendship < ActiveRecord::Base
     foreign_key: :user2_id
 
   def self.accepted_friendships(user)
-    Friendship
+    friendships = Friendship
       .where("user1_id = #{user.id} OR user2_id = #{user.id}")
       .where("status = 'accepted'")
       .pluck(:user1_id, :user2_id)
       .flatten
       .uniq
+
+    friendships.reject { |friend_id| friend_id == user.id }
   end
 
   def self.find_friendship(user1, user2)

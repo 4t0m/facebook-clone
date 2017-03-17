@@ -12,7 +12,7 @@ export const receivePosts = posts => ({
   type: RECEIVE_POSTS,
   posts
 });
-//
+
 // export const findFriendship = friendUserId => dispatch => {
 //   return FriendshipAPIUtil.findFriendship(friendUserId)
 //     .then(friendship => dispatch(receiveFriendship(friendship))

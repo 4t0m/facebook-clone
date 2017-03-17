@@ -46,6 +46,11 @@ class User < ActiveRecord::Base
   #   primary_key: :id,
   #   foreign_key: :user2_id
 
+  has_many :posts,
+    class_name: :Post,
+    primary_key: :id,
+    foreign_key: :author_id
+
   after_initialize :ensure_session_token
 
   def password=(password)
@@ -71,8 +76,18 @@ class User < ActiveRecord::Base
   end
 
   def friends
-    # does this work with an array?
     User.where(id: Friendship.accepted_friendships(self))
+  end
+
+  def timeline
+    timeline_posts = self.friends.map(&:posts)
+    timeline_posts << self.posts
+    timeline_posts.flatten
+  end
+
+  def newsfeed
+    friend_ids = self.friends.map(&:id)
+    Post.where(author_id: friend_ids) + Post.where(host_id: friend_ids)
   end
 
   private

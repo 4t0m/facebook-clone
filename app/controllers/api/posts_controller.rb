@@ -1,20 +1,23 @@
 class Api::PostsController < ApplicationController
 
   def index
-    # each of the below will hit different methods
-    # if query param is wall do this
-
-
-    # if query param is newsfeed do this
-
-    # if query param is own do this
+    user = User.find(params[:id])
+    if params[:collection] == "wall"
+      @posts = user.timeline
+      render :index
+    elsif params[:collection] == "feed"
+      @posts = user.newsfeed
+      render :index
+    else
+      render json: ["Improper query"], status: 422
+    end
   end
 
   def create
     @post = Post.new(post_params)
     @post.author_id = current_user.id
     @post.host_id = params[:id]
-    
+
     if @post.save
       render :show
     else
