@@ -20,19 +20,19 @@ export const fetchFeed = userId => (
 // );
 
 
-export const createPost = post => (
+export const createPost = (post, userId) => (
   $.ajax({
     type: 'POST',
-    url: `/api/posts`,
+    url: `/api/users/${userId}/posts`,
     data: { post }
   })
 );
 
 
-export const updatePost = (id, data) => (
+export const updatePost = (data, postId) => (
   $.ajax({
     type: 'PATCH',
-    url: `/api/posts/${id}`,
+    url: `/api/posts/${postId}`,
     data,
     processData: false,
     contentType: false
