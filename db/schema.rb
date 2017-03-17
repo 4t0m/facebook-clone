@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170116234435) do
+ActiveRecord::Schema.define(version: 20170317014447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,21 @@ ActiveRecord::Schema.define(version: 20170116234435) do
   end
 
   add_index "friendships", ["user1_id", "user2_id"], name: "index_friendships_on_user1_id_and_user2_id", unique: true, using: :btree
+
+  create_table "posts", force: :cascade do |t|
+    t.text     "body",                   null: false
+    t.integer  "author_id",              null: false
+    t.integer  "host_id",                null: false
+    t.string   "thumbnail_file_name"
+    t.string   "thumbnail_content_type"
+    t.integer  "thumbnail_file_size"
+    t.datetime "thumbnail_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "posts", ["author_id"], name: "index_posts_on_author_id", using: :btree
+  add_index "posts", ["host_id"], name: "index_posts_on_host_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "fname",           null: false
