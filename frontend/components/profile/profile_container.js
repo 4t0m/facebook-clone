@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { login, logout, signup } from '../../actions/session_actions';
 import { fetchUser, updateUser } from '../../actions/user_actions';
+import { fetchWall } from '../../actions/post_actions';
 import { findFriendship, acceptFriendship }
   from '../../actions/friendship_actions';
 
@@ -17,6 +18,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchUser: id => dispatch(fetchUser(id)),
   updateUser: (data, id) => dispatch(updateUser(data, id)),
   findFriendship: friendUserId => dispatch(findFriendship(friendUserId)),
+  fetchWall: id => dispatch(fetchWall(id))
 });
 
 export default connect(

@@ -4,6 +4,7 @@ import HeaderContainer from '../header/header_container';
 import TopSectionContainer from './top_section/top_section_container';
 import AboutInfo from './about_info';
 import Friends from './friends';
+import FeedContainer from '../feed/feed_container';
 
 class Profile extends React.Component {
   constructor(props){
@@ -14,6 +15,7 @@ class Profile extends React.Component {
   componentDidMount() {
     this.props.fetchUser(this.props.params.id);
     this.props.findFriendship(this.props.params.id);
+    this.props.fetchWall(this.props.params.id);
 
   }
 
@@ -22,6 +24,7 @@ class Profile extends React.Component {
     if (this.props.params.id !== nextProps.params.id) {
       this.props.fetchUser(nextProps.params.id);
       this.props.findFriendship(nextProps.params.id);
+      this.props.fetchWall(nextProps.params.id);
     }
   }
 
@@ -34,9 +37,7 @@ class Profile extends React.Component {
           <AboutInfo user={this.props.user} currentUser={this.props.currentUser}
             updateUser={this.props.updateUser}/>
           <Friends />
-          <p>
-            This will be a profile.
-          </p>
+          <FeedContainer />
         </div>
       </div>
     </div>;

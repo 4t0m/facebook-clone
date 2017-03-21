@@ -8,7 +8,7 @@ const rootReducer = combineReducers({
   session: SessionReducer,
   user: UserReducer,
   friendship: FriendshipReducer,
-  post: PostReducer
+  posts: PostReducer
 });
 
 export default rootReducer;
