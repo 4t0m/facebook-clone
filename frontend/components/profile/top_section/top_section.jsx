@@ -106,7 +106,6 @@ class TopSection extends React.Component {
   }
 
   render() {
-    // debugger;
     const fullName = this.props.user ? `${this.props.user.fname} ${this.props.user.lname}` : "";
     const firstName = this.props.user ? `${this.props.user.fname}` : "";
     const userCoverPic = this.props.user ? this.props.user.cover_pic : "";

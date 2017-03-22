@@ -79,7 +79,6 @@ class PostForm extends React.Component {
     e.preventDefault(e);
     this.props.createPost(this.state, this.props.params.id);
     this.setState({body: ""});
-
   }
 
   updateForm(e) {
@@ -128,10 +127,9 @@ class PostForm extends React.Component {
     //   <input type="file" onChange={this.props.updateImage}></input>
     // </label>
     // {this.props.displayPhoto && postPhoto}
-
     let placeHolder;
     if(this.props.currentUser) {
-      if(this.props.currentUser.id === this.props.params.id){
+      if(this.props.currentUser.id == this.props.params.id){
         placeHolder = "What's on your mind?";
       }
       else{
@@ -149,8 +147,8 @@ class PostForm extends React.Component {
             </Link>
 
             <textarea className="newsfeed-post-textarea"
-                      value={this.props.body}
-                      placeholder={this.props.placeHolder}
+                      value={this.state.body}
+                      placeholder={placeHolder}
                       onChange = {this.updateForm}
             ></textarea>
 
