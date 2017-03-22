@@ -9,7 +9,7 @@ constructor(props){
   super(props);
   this.state = {
     editing: false,
-    displayHidden: false,
+    // displayHidden: false,
     body: this.props.post.body,
   };
   // this.changeHiddenState = this.changeHiddenState.bind(this);

@@ -12,11 +12,12 @@
 
 import { connect } from 'react-redux';
 import { updatePost, deletePost } from '../../actions/post_actions';
+import { getPost } from '../../reducers/selectors'
 import PostItem from './post_item';
 
 const mapStateToProps = ({ posts, session }, ownProps) => {
   return {
-    post: posts[ownProps.postId],
+    post: getPost(posts, ownProps.postId),
     currentUser: session.currentUser
   };
 };
