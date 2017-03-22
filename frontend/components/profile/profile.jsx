@@ -37,7 +37,7 @@ class Profile extends React.Component {
           <AboutInfo user={this.props.user} currentUser={this.props.currentUser}
             updateUser={this.props.updateUser}/>
           <Friends />
-          <FeedContainer />
+          <FeedContainer params={this.props.params}/>
         </div>
       </div>
     </div>;

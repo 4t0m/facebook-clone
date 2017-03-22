@@ -12,15 +12,16 @@ import { connect } from 'react-redux';
 import { createPost } from '../../actions/post_actions';
 import PostForm from './post_form';
 
-const mapStateToProps = ({ posts, session }, ownProps) => {
+const mapStateToProps = ({ posts, session, user }, ownProps) => {
   return {
     post: posts[ownProps.post_id],
-    currentUser: session.currentUser
+    currentUser: session.currentUser,
+    user
   };
 };
 
 const mapDispatchToProps = dispatch => ({
-  createPost: post => dispatch(createPost(post)),
+  createPost: (post, userId) => dispatch(createPost(post, userId)),
 });
 
 export default connect(

@@ -1,7 +1,7 @@
 class Api::PostsController < ApplicationController
 
   def index
-    user = User.find(params[:id])
+    user = User.find(params[:user_id])
     if params[:collection] == "wall"
       @posts = user.timeline
       render :index
@@ -16,9 +16,9 @@ class Api::PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.author_id = current_user.id
-    @post.host_id = params[:id]
+    @post.host_id = params[:user_id]
 
-    if @post.save
+    if @post.save!
       render :show
     else
       render json: @post.errors.full_messages, status: 422
