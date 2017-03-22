@@ -49,7 +49,7 @@ render() {
   if (post.host_id === post.author_id){
     nameLink = (<Link className="post-name-link-real"
                       to={`/profile/${post.author_id}`}
-                      >{post.author.fname} {post.author.lname}
+                      >{`${post.author.firstname} ${post.author.lastname}`}
                 </Link>);
   } else {
     // <img src={window.assets.smalltriangle}/>
@@ -57,18 +57,19 @@ render() {
       <div className="authorToTarget">
         <Link className="post-name-link-real"
               to={`/profile/${post.author_id}`}
-              >{post.author.firstname} {post.author.lastname}
+              >{`${post.author.firstname} ${post.author.lastname}`}
         </Link>
+        <span>></span>
         <Link className="post-name-link-real"
               to={`/profile/${post.host_id}`}
-              > {post.host.firstname} {post.host.lastname}
+              > {`${post.host.firstname} ${post.host.lastname}`}
         </Link>
       </div>
     );
   }
 
   let removeEdit;
-  if(currentUser && (currentUser.username === post.author.username || currentUser.username === post.target.username)){
+  if(currentUser && (currentUser.id === post.author_id || currentUser.id === post.host_id)){
     removeEdit = (
       <div className="deleteEdit">
         <div className="deleteContainer">
@@ -138,7 +139,7 @@ render() {
                 <Link className="poster-thumb-img" to={`/profile/${post.author_id}`}>
                   <img src={currentUser.photo_url}/>
                 </Link>
-
+                { removeEdit }
                 <textarea className="newsfeed-post-textarea"
                           value= { this.state.body }
                           onChange = {this.updateForm}
@@ -154,21 +155,24 @@ render() {
       return(
         <li className="post-item">
           <div className="post-content">
-            <div className="post-author-thumb">
-              <img src={post.thumbnail}/>
-              <Link className="post-thumb-img" to={`/profile/${post.author_id}`}>
-              </Link>
+            <div className="post-top">
+              <div className="post-author-thumb">
+                <img src={post.thumbnail}/>
+                <Link className="post-thumb-img" to={`/profile/${post.author_id}`}>
+                </Link>
+              </div>
               <div className="post-name-link">
                 {nameLink}
                 <div className="post-date">{post.date} at {post.time}</div>
               </div>
+              { removeEdit }
+
             </div>
 
             <div className="post-text">
               {post.body}
             </div>
           </div>
-
         </li>
       );
   }
@@ -177,14 +181,3 @@ render() {
 
 
 export default PostItem;
-
-
-
-
-
-// <div className="dropdown">
-//   <div>
-//     <img src={window.assets.dropdown}/>
-//     { removeEdit }
-//   </div>
-// </div>

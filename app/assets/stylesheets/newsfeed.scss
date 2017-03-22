@@ -11,6 +11,10 @@
   border: 1px solid rgba(0, 0, 0, .1);
 }
 
+.post-top {
+  display: flex;
+}
+
 .post-text {
   box-sizing: border-box;
   background: white;
@@ -23,6 +27,8 @@
 
 .post-name-link-real {
   text-transform: capitalize;
+  display: flex;
+  margin: 0 10px;
 }
 
 .post-date {
@@ -30,6 +36,7 @@
   font-size: 12px;
   font-weight: normal;
   margin-top: 3px;
+  margin-left: 10px;
 }
 
 .post-item {
@@ -41,6 +48,8 @@
 }
 
 .post-name-link {
+  display: flex;
+  flex-direction: column;
   color: #365899;
   font-weight: bolder;
   font-size: 15px;
@@ -246,6 +255,10 @@
 .authorToTarget {
   display: flex;
   align-items: center;
+}
+
+.authorToTarget span {
+  color: #90949c;
 }
 
 .authorToTarget img {
