@@ -12,7 +12,7 @@ constructor(props){
     displayHidden: false,
     body: this.props.post.body,
   };
-  this.changeHiddenState = this.changeHiddenState.bind(this);
+  // this.changeHiddenState = this.changeHiddenState.bind(this);
   this.updateForm = this.updateForm.bind(this);
   this.handleSubmit = this.handleSubmit.bind(this);
 }
@@ -29,10 +29,10 @@ handleSubmit(e){
   this.props.updatePost(this.state.body, this.props.post.id);
 }
 
-changeHiddenState(e){
-  e.preventDefault();
-  this.setState({ displayHidden: !this.state.displayHidden });
-}
+// changeHiddenState(e){
+//   e.preventDefault();
+//   this.setState({ displayHidden: !this.state.displayHidden });
+// }
 
 render() {
   const { post, deletePost, handler, displayDelete, currentUser, updateComment,
@@ -41,27 +41,27 @@ render() {
 
   let postImage = (
     <div className="post-img">
-      <img src={post.image_url}/>
+      <img src={post.thumbnail}/>
     </div>
   );
 
   let nameLink;
-  if (post.target_id === post.author_id){
+  if (post.host_id === post.author_id){
     nameLink = (<Link className="post-name-link-real"
-                      to={`/home/${post.author.username}`}
-                      >{post.author.firstname} {post.author.lastname}
+                      to={`/profile/${post.author_id}`}
+                      >{post.author.fname} {post.author.lname}
                 </Link>);
   } else {
+    // <img src={window.assets.smalltriangle}/>
     nameLink = (
       <div className="authorToTarget">
         <Link className="post-name-link-real"
-              to={`/home/${post.author.username}`}
+              to={`/profile/${post.author_id}`}
               >{post.author.firstname} {post.author.lastname}
         </Link>
-        <img src={window.assets.smalltriangle}/>
         <Link className="post-name-link-real"
-              to={`/home/${post.target.username}`}
-              > {post.target.firstname} {post.target.lastname}
+              to={`/profile/${post.host_id}`}
+              > {post.host.firstname} {post.host.lastname}
         </Link>
       </div>
     );
@@ -80,34 +80,52 @@ render() {
     );
   }
 
-  let likeToken;
-  let likeButton = (
-    <a onClick={likePost} href='#' className={`${post.id} like-button`}>
-      <img src={window.assets.like}/>
-    </a>
-  );
-  if(post.likes && post.likes.length > 0){
-    likeToken = (
-      <div className="likeToken">
-        <div>
-          <img src={window.assets.likeToken}/>
-        </div>
-        <label className="showLikers">{post.likes.length}</label>
-        <LikerList
-          likers={post.likes.map((like) => like.liker)}
-        />
-      </div>
-    );
-    post.likes.forEach((like) => {
-      if(currentUser && (like.liker_id === currentUser.id)){
-        likeButton = (
-          <a onClick={unlikePost} href='#' className={`${like.id} unlike-button`}>
-            <img src={window.assets.unlike}/>
-          </a>
-        );
-      }
-    });
-  }
+  // let likeToken;
+  // let likeButton = (
+  //   <a onClick={likePost} href='#' className={`${post.id} like-button`}>
+  //     <img src={window.assets.like}/>
+  //   </a>
+  // );
+  // if(post.likes && post.likes.length > 0){
+  //   likeToken = (
+  //     <div className="likeToken">
+  //       <div>
+  //         <img src={window.assets.likeToken}/>
+  //       </div>
+  //       <label className="showLikers">{post.likes.length}</label>
+  //       <LikerList
+  //         likers={post.likes.map((like) => like.liker)}
+  //       />
+  //     </div>
+  //   );
+  //   post.likes.forEach((like) => {
+  //     if(currentUser && (like.liker_id === currentUser.id)){
+  //       likeButton = (
+  //         <a onClick={unlikePost} href='#' className={`${like.id} unlike-button`}>
+  //           <img src={window.assets.unlike}/>
+  //         </a>
+  //       );
+  //     }
+  //   });
+  // }
+
+  // <div className="like-bar">
+  //   {likeButton}
+  //   {likeToken}
+  // </div>
+
+  // <Comments
+  //   updateComment={updateComment}
+  //   post={post}
+  //   currentUser={currentUser}
+  //   submitComment={submitComment}
+  //   commentBody={commentBody}
+  //   displayHidden={this.state.displayHidden}
+  //   changeHiddenState={this.changeHiddenState}
+  //   deleteComment={deleteComment}
+  //   currentPostId={currentPostId}
+  //   />
+
 
   if (this.state.editing){
     return (
@@ -117,7 +135,7 @@ render() {
 
             <div className="newsfeed-post-content">
               <div className="newsfeed-post-body group">
-                <Link className="poster-thumb-img" to={`/home/${currentUser.username}`}>
+                <Link className="poster-thumb-img" to={`/profile/${post.author_id}`}>
                   <img src={currentUser.photo_url}/>
                 </Link>
 
@@ -137,8 +155,8 @@ render() {
         <li className="post-item">
           <div className="post-content">
             <div className="post-author-thumb">
-              <Link className="post-thumb-img" to={`/home/${post.author.username}`}>
-                <img src={post.author.photo_url}/>
+              <img src={post.thumbnail}/>
+              <Link className="post-thumb-img" to={`/profile/${post.author_id}`}>
               </Link>
               <div className="post-name-link">
                 {nameLink}
@@ -149,33 +167,8 @@ render() {
             <div className="post-text">
               {post.body}
             </div>
-
-            { (post.image_url.indexOf("/assets/monolith") === -1) && postImage }
           </div>
 
-          <div className="like-bar">
-            {likeButton}
-            {likeToken}
-          </div>
-
-          <Comments
-            updateComment={updateComment}
-            post={post}
-            currentUser={currentUser}
-            submitComment={submitComment}
-            commentBody={commentBody}
-            displayHidden={this.state.displayHidden}
-            changeHiddenState={this.changeHiddenState}
-            deleteComment={deleteComment}
-            currentPostId={currentPostId}
-            />
-
-          <div className="dropdown">
-            <div>
-              <img src={window.assets.dropdown}/>
-              { removeEdit }
-            </div>
-          </div>
         </li>
       );
   }
@@ -184,3 +177,14 @@ render() {
 
 
 export default PostItem;
+
+
+
+
+
+// <div className="dropdown">
+//   <div>
+//     <img src={window.assets.dropdown}/>
+//     { removeEdit }
+//   </div>
+// </div>

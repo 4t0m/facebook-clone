@@ -34,10 +34,14 @@ class Profile extends React.Component {
       <div className="profile-container">
         <div className="profile-body">
           <TopSectionContainer params={this.props.params}/>
-          <AboutInfo user={this.props.user} currentUser={this.props.currentUser}
-            updateUser={this.props.updateUser}/>
-          <Friends />
-          <FeedContainer params={this.props.params}/>
+          <div className="profile-main">
+            <section className="profile-main-left">
+              <AboutInfo user={this.props.user} currentUser={this.props.currentUser}
+                updateUser={this.props.updateUser}/>
+              <Friends />
+            </section>
+            <FeedContainer params={this.props.params}/>
+          </div>
         </div>
       </div>
     </div>;

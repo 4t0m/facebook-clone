@@ -29,10 +29,10 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: :true
 
-  has_attached_file :profile_pic, default_url: "missing.png"
+  has_attached_file :profile_pic, default_url: "/image/missing.png"
   # validates_attachment_content_type :profile_pic, content_type: /\Aimage\/.*\Z/
 
-  has_attached_file :cover_pic, default_url: "no-cover.png"
+  has_attached_file :cover_pic, default_url: "/image/no-cover.png"
   # validates_attachment_content_type :cover_pic, content_type: /\Aimage\/.*\Z/
 
   # has_many :friendships_requested,

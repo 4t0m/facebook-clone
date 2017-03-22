@@ -220,7 +220,7 @@ class Feed extends React.Component{
           <ul className="newsfeed-posts">
             {
               posts.map(post =>
-                <PostItemContaner key={post.id} postId={post.id}
+                <PostItemContainer key={post.id} postId={post.id}
                   params={this.props.params}/>
               )
             }

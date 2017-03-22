@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
 
-  has_attached_file :thumbnail, default_url: "missing_thumbnail.png"
+  has_attached_file :thumbnail, default_url: "/image/missing.png"
   # validates_attachment_content_type :thumbnail, content_type: /\Aimage\/.*\Z/
 
   belongs_to :author,

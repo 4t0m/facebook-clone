@@ -16,7 +16,7 @@ import PostItem from './post_item';
 
 const mapStateToProps = ({ posts, session }, ownProps) => {
   return {
-    post: posts[ownProps.post_id],
+    post: posts[ownProps.postId],
     currentUser: session.currentUser
   };
 };

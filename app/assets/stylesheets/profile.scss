@@ -6,10 +6,15 @@
 
 .profile-body {
   background-color: $light-gray;
-  width: 1000px;
+  width: 860px;
   left: -100px;
   position: relative;
 
+}
+
+.profile-main {
+  display: flex;
+  justify-content: space-between;
 }
 
 .about-info {
