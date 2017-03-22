@@ -80,9 +80,7 @@ class User < ActiveRecord::Base
   end
 
   def timeline
-    timeline_posts = self.friends.map(&:posts)
-    timeline_posts << self.posts
-    timeline_posts.flatten
+    Post.where(host_id: self.id).order(created_at: :desc)
   end
 
   def newsfeed
