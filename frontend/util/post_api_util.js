@@ -29,11 +29,15 @@ export const createPost = (post, userId) => (
 );
 
 
-export const updatePost = (data, postId) => (
+export const updatePost = (newText, postId) => (
   $.ajax({
     type: 'PATCH',
     url: `/api/posts/${postId}`,
-    data,
+    data : {
+      post: {
+        body: newText
+      }
+    },
     processData: false,
     contentType: false
   })

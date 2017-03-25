@@ -1,8 +1,8 @@
 import React from 'react';
 
 class TopSection extends React.Component {
-  constructor(params) {
-    super(params);
+  constructor(props) {
+    super(props);
 
     this.createFriendship = this.createFriendship.bind(this);
     this.removeFriendship = this.removeFriendship.bind(this);

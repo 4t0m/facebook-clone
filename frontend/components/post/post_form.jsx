@@ -77,7 +77,8 @@ class PostForm extends React.Component {
   //
   handleSubmit(e) {
     e.preventDefault(e);
-    this.props.createPost(this.state, this.props.params.id);
+    let hostId = this.props.params.id || this.props.currentUser.id;
+    this.props.createPost(this.state, hostId);
     this.setState({body: ""});
   }
 
@@ -127,36 +128,40 @@ class PostForm extends React.Component {
     //   <input type="file" onChange={this.props.updateImage}></input>
     // </label>
     // {this.props.displayPhoto && postPhoto}
-    let placeHolder;
-    if(this.props.currentUser) {
-      if(this.props.currentUser.id == this.props.params.id){
+    if(this.props.currentUser && this.props.currentUser.id) {
+      let placeHolder;
+      if(!this.props.params.id || this.props.currentUser.id == this.props.params.id){
         placeHolder = "What's on your mind?";
       }
       else{
         placeHolder = `Write something to ${this.props.user.fname}`;
       }
+      return(
+        <form className="newsfeed-postform" onSubmit={this.handleSubmit}>
+
+          <div className="newsfeed-post-content">
+            <div className="newsfeed-post-body group">
+              <Link className="poster-thumb-img" to={`/profile/${this.props.currentUser.id}`}>
+                <img src={this.props.currentUser.photo_url}/>
+              </Link>
+
+              <textarea className="newsfeed-post-textarea"
+                value={this.state.body}
+                placeholder={placeHolder}
+                onChange = {this.updateForm}
+                ></textarea>
+
+            </div>
+          </div>
+          <input className="post-submit-button" type="submit" value="Post" />
+        </form>
+      );
+    } else {
+      return(
+        <div></div>
+      );
     }
 
-    return(
-      <form className="newsfeed-postform" onSubmit={this.handleSubmit}>
-
-        <div className="newsfeed-post-content">
-          <div className="newsfeed-post-body group">
-            <Link className="poster-thumb-img" to={`/profile/${this.props.currentUser.id}`}>
-              <img src={this.props.currentUser.photo_url}/>
-            </Link>
-
-            <textarea className="newsfeed-post-textarea"
-                      value={this.state.body}
-                      placeholder={placeHolder}
-                      onChange = {this.updateForm}
-            ></textarea>
-
-          </div>
-        </div>
-        <input className="post-submit-button" type="submit" value="Post" />
-      </form>
-    );
   }
 }
 

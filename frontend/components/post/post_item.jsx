@@ -26,7 +26,9 @@ updateForm(e){
 handleSubmit(e){
   e.preventDefault();
   this.setState({ editing: false });
+  debugger;
   this.props.updatePost(this.state.body, this.props.post.id);
+  debugger;
 }
 
 // changeHiddenState(e){
@@ -70,13 +72,9 @@ render() {
 
   let removeEdit;
   if(currentUser && (currentUser.id === post.author_id || currentUser.id === post.host_id)){
-    removeEdit = (
-      <div className="deleteEdit">
-        <div className="deleteContainer">
+    removeEdit = (<div>
           <button className="deletePost" value={`${post.id}`} onClick={deletePost}>Delete</button>
-          <div className="borderline"></div>
-        </div>
-        <button className="editPost" onClick={ ()=>this.setState({ editing: true})}>Edit</button>
+          <button className="editPost" onClick={ ()=>this.setState({ editing: true})}>Edit</button>
       </div>
     );
   }

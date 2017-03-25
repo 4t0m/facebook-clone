@@ -37,7 +37,7 @@ class Feed extends React.Component{
 
   componentDidUpdate(prevProps){
     if(prevProps.params !== this.props.params) {
-      if (this.props.params) {
+      if (this.props.params.id) {
         this.props.fetchWall(this.props.params.id);
       } else {
         this.props.fetchFeed(this.props.currentUser.id);
@@ -46,7 +46,7 @@ class Feed extends React.Component{
   }
 
   componentDidMount(){
-    if (this.props.params) {
+    if (this.props.params.id) {
       this.props.fetchWall(this.props.params.id);
     } else {
       this.props.fetchFeed(this.props.currentUser.id);

@@ -1,10 +1,17 @@
 import * as PostAPIUtil from '../util/post_api_util';
 
-export const RECEIVE_POST = "RECEIVE_POST3";
+export const RECEIVE_POST = "RECEIVE_POST";
 export const RECEIVE_POSTS = "RECEIVE_POSTS";
+export const DELETE_POST = "DELETE_POST";
+
 
 export const receivePost = post => ({
   type: RECEIVE_POST,
+  post
+});
+
+export const removePost = post => ({
+  type: DELETE_POST,
   post
 });
 
@@ -42,7 +49,7 @@ export const updatePost = (postData, postId) => dispatch => (
 
 export const deletePost = postId => dispatch => (
   PostAPIUtil.deletePost(postId)
-    .then(post => dispatch(receivePost(post)))
+    .then(post => dispatch(removePost(post)))
 );
 
 // export const removeFriendship = friendshipId => dispatch => {

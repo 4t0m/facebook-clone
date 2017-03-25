@@ -86,7 +86,7 @@ class User < ActiveRecord::Base
   def newsfeed
     friend_ids = self.friends.map(&:id)
     Post
-      .where("author_id IN ? OR host_id IN ?", friend_ids, friend_ids)
+      .where("author_id IN (?) OR (host_id IN (?) AND author_id != ?)", friend_ids, friend_ids, self.id)
       .order(created_at: :desc)
       .uniq
   end
