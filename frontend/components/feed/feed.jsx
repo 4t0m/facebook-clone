@@ -163,12 +163,19 @@ class Feed extends React.Component{
     //                    <img src={this.state.imageUrl}/>
     //                  </div>);
     // let currentUser = {};
-
-
     let postForm;
-    // if(this.props.friendNames.includes(this.props.targetusername) || currentUser.username === this.props.targetusername){
+    // if(this.props.friendNam/.includes(this.props.targetusername) || currentUser.username === this.props.targetusername){
+    if ((this.props.friendship && this.props.friendship.id)) {
+      if (this.props.friendship.status === "accepted") {
+        postForm = <PostFormContainer params={this.props.params}/>;
+      }
+    } else if (this.props.params.id == this.props.currentUser.id) {
       postForm = <PostFormContainer params={this.props.params}/>;
-    // }
+    } else if (!this.props.params.id) {
+      postForm = <PostFormContainer params={this.props.params}/>;
+    } else {
+      postForm = <div></div>;
+    }
     //
     // let profilePairs = Object.assign({}, this.props.profile);
     // delete profilePairs.photo_url;

@@ -3,10 +3,11 @@ import { getPosts } from '../../reducers/selectors';
 import { createPost, fetchFeed, fetchWall } from '../../actions/post_actions';
 import Feed from './feed';
 
-const mapStateToProps = ({ posts, session }) => {
+const mapStateToProps = ({ posts, session, friendship }) => {
   return {
     posts: getPosts(posts),
-    currentUser: session.currentUser
+    currentUser: session.currentUser,
+    friendship
   };
 };
 

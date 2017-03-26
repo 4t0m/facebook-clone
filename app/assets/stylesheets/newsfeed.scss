@@ -8,9 +8,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #f7f7f7;
 }
 
 .home-newsfeed-container {
+  margin-left: -350px;
+  margin-top: 30px;
 }
 
 .post-thumb-img img {

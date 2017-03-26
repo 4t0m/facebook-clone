@@ -12,7 +12,7 @@ import { connect } from 'react-redux';
 import { createPost } from '../../actions/post_actions';
 import PostForm from './post_form';
 
-const mapStateToProps = ({ posts, session, user }, ownProps) => {
+const mapStateToProps = ({ friendship, session, user }, ownProps) => {
   return {
     currentUser: session.currentUser,
     user
