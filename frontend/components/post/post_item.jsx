@@ -30,12 +30,6 @@ render() {
           submitComment, commentBody, dynamicSet, deleteComment, currentPostId,
           updatePost, likePost, unlikePost } = this.props;
 
-  let postImage = (
-    <div className="post-img">
-      <img src={post.thumbnail}/>
-    </div>
-  );
-
   let nameLink;
   if (post.host_id === post.author_id){
     nameLink = (<Link className="post-name-link-real"
@@ -96,7 +90,7 @@ render() {
             <div className="post-top">
               <div className="post-image-name">
                 <div className="post-author-thumb">
-                  <img src={post.thumbnail}/>
+                  <img src={post.image_url}/>
                   <Link className="post-thumb-img" to={`/profile/${post.author_id}`}>
                   </Link>
                 </div>

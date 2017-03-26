@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170317014447) do
+ActiveRecord::Schema.define(version: 20170326022321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,14 +42,14 @@ ActiveRecord::Schema.define(version: 20170317014447) do
   add_index "posts", ["host_id"], name: "index_posts_on_host_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "fname",           null: false
-    t.string   "lname",           null: false
-    t.string   "email",           null: false
-    t.string   "password_digest", null: false
-    t.string   "session_token",   null: false
+    t.string   "fname",                    null: false
+    t.string   "lname",                    null: false
+    t.string   "email",                    null: false
+    t.string   "password_digest",          null: false
+    t.string   "session_token",            null: false
     t.string   "profile_pic_url"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.string   "gender"
     t.string   "home_town"
     t.string   "relationship"
@@ -58,6 +58,14 @@ ActiveRecord::Schema.define(version: 20170317014447) do
     t.date     "birthday"
     t.string   "school"
     t.string   "current_city"
+    t.string   "profile_pic_file_name"
+    t.string   "profile_pic_content_type"
+    t.integer  "profile_pic_file_size"
+    t.datetime "profile_pic_updated_at"
+    t.string   "cover_pic_file_name"
+    t.string   "cover_pic_content_type"
+    t.integer  "cover_pic_file_size"
+    t.datetime "cover_pic_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

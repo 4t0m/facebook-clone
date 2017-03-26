@@ -39,7 +39,7 @@ class PostForm extends React.Component {
           <div className="newsfeed-post-content">
             <div className="newsfeed-post-body group">
               <Link className="poster-thumb-img" to={`/profile/${this.props.currentUser.id}`}>
-                <img src={this.props.currentUser.photo_url}/>
+                <img src={this.props.currentUser.profile_pic_url}/>
               </Link>
 
               <textarea className="newsfeed-post-textarea"

@@ -2,24 +2,32 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  fname           :string           not null
-#  lname           :string           not null
-#  email           :string           not null
-#  password_digest :string           not null
-#  session_token   :string           not null
-#  profile_pic_url :string
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#  gender          :string
-#  home_town       :string
-#  relationship    :string
-#  workplace       :string
-#  cover_pic_url   :string
-#  birthday        :date
-#  school          :string
-#  current_city    :string
-
+#  id                       :integer          not null, primary key
+#  fname                    :string           not null
+#  lname                    :string           not null
+#  email                    :string           not null
+#  password_digest          :string           not null
+#  session_token            :string           not null
+#  profile_pic_url          :string
+#  created_at               :datetime         not null
+#  updated_at               :datetime         not null
+#  gender                   :string
+#  home_town                :string
+#  relationship             :string
+#  workplace                :string
+#  cover_pic_url            :string
+#  birthday                 :date
+#  school                   :string
+#  current_city             :string
+#  profile_pic_file_name    :string
+#  profile_pic_content_type :string
+#  profile_pic_file_size    :integer
+#  profile_pic_updated_at   :datetime
+#  cover_pic_file_name      :string
+#  cover_pic_content_type   :string
+#  cover_pic_file_size      :integer
+#  cover_pic_updated_at     :datetime
+#
 
 class User < ActiveRecord::Base
 
@@ -29,11 +37,11 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: :true
 
-  has_attached_file :profile_pic, default_url: "/image/missing.png"
-  # validates_attachment_content_type :profile_pic, content_type: /\Aimage\/.*\Z/
+  has_attached_file :profile_pic, default_url: "missing.png"
+  validates_attachment_content_type :profile_pic, content_type: /\Aimage\/.*\Z/
 
-  has_attached_file :cover_pic, default_url: "/image/no-cover.png"
-  # validates_attachment_content_type :cover_pic, content_type: /\Aimage\/.*\Z/
+  has_attached_file :cover_pic, default_url: "no-cover.png"
+  validates_attachment_content_type :cover_pic, content_type: /\Aimage\/.*\Z/
 
   # has_many :friendships_requested,
   #   class_name: :frienships,

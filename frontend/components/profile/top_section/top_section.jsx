@@ -26,7 +26,7 @@ class TopSection extends React.Component {
 
   updateProfilePicButton() {
     if (this.props.currentUser) {
-      if (this.props.params.id === this.props.currentUser.id) {
+      if (this.props.params.id == this.props.currentUser.id) {
         return (
           <div className="profile-picture-editpic" onClick={ () => {
             $('#profile-pic-input').click()
@@ -70,7 +70,8 @@ class TopSection extends React.Component {
     var file = e.currentTarget.files[0];
     var formData = new FormData();
     formData.append("user[profilepic]", file);
-    this.props.updateUser(formData).then(() => this.refreshPostsAfterUpload() );
+    this.props.updateUser(formData);
+    // .then(() => this.refreshPostsAfterUpload() );
   }
 
   friendButton() {
@@ -108,12 +109,12 @@ class TopSection extends React.Component {
   render() {
     const fullName = this.props.user ? `${this.props.user.fname} ${this.props.user.lname}` : "";
     const firstName = this.props.user ? `${this.props.user.fname}` : "";
-    const userCoverPic = this.props.user ? this.props.user.cover_pic : "";
-    // const coverStyle = {backgroundImage:"url("+userCoverPic+")"};
-    const coverStyle = {};
-    const userProfilePic = this.props.user ? this.props.user.profile_pic : "";
-    // const profileStyle = {backgroundImage:"url("+userProfilePic+")"};
-    const profileStyle = {};
+    const userCoverPic = this.props.user ? this.props.user.cover_pic_url : "";
+    const coverStyle = {backgroundImage:"url("+userCoverPic+")"};
+    // const coverStyle = {};
+    const userProfilePic = this.props.user ? this.props.user.profile_pic_url : "";
+    const profileStyle = {backgroundImage:"url("+userProfilePic+")"};
+    // const profileStyle = {};
 
     return (
       <div className="profile-top-section">

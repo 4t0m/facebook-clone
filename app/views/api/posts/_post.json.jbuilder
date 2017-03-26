@@ -1,6 +1,6 @@
-json.extract! post, :id, :body, :author_id, :host_id, :date, :time, :thumbnail
+json.extract! post, :id, :body, :author_id, :host_id, :date, :time
 
-# json.image_url asset_path(post.thumbnail.url)
+json.image_url asset_path(post.thumbnail.url)
 
 json.author do
   # json.photo_url asset_path(post.author.photo.url)
