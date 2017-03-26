@@ -20,13 +20,6 @@ export const receivePosts = posts => ({
   posts
 });
 
-// export const findFriendship = friendUserId => dispatch => {
-//   return FriendshipAPIUtil.findFriendship(friendUserId)
-//     .then(friendship => dispatch(receiveFriendship(friendship))
-//   );
-// };
-//
-
 export const fetchWall = userId => dispatch => (
   PostAPIUtil.fetchWall(userId)
     .then(posts => dispatch(receivePosts(posts)))
@@ -51,15 +44,3 @@ export const deletePost = postId => dispatch => (
   PostAPIUtil.deletePost(postId)
     .then(post => dispatch(removePost(post)))
 );
-
-// export const removeFriendship = friendshipId => dispatch => {
-//   return FriendshipAPIUtil.removeFriendship(friendshipId)
-//     .then(friendship => dispatch(receiveFriendship(null))
-//   );
-// };
-//
-// export const acceptFriendship = friendshipId => dispatch => {
-//   return FriendshipAPIUtil.acceptFriendship(friendshipId)
-//     .then(friendship => dispatch(receiveFriendship(friendship))
-//   );
-// };

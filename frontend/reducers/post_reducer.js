@@ -4,14 +4,21 @@ import merge from 'lodash/merge';
 
 const PostReducer = (state = {}, action) => {
   Object.freeze(state);
+  let newPosts;
+  let deleteIndex;
   switch(action.type){
     case RECEIVE_POSTS:
       return action.posts;
     case RECEIVE_POST:
-      return Object.assign({}, state, {[action.post.id]: action.post});
+      newPosts = Object.assign({}, state);
+      deleteIndex = Object.keys(newPosts).find(key => (
+        newPosts[key].id === action.post.id
+      ));
+      delete newPosts[deleteIndex];
+      return Object.assign({}, newPosts, {[action.post.id]: action.post});
     case DELETE_POST:
-      const newPosts = Object.assign({}, state);
-      const deleteIndex = Object.keys(newPosts).find(key => (
+      newPosts = Object.assign({}, state);
+      deleteIndex = Object.keys(newPosts).find(key => (
         newPosts[key].id === action.post.id
       ));
       delete newPosts[deleteIndex];

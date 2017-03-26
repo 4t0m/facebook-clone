@@ -12,14 +12,6 @@ export const fetchFeed = userId => (
   })
 );
 
-// export const fetchOwnPosts = userId => (
-//   $.ajax({
-//     type: "GET",
-//     url: `/api/users/${userId}/posts?collection=own`
-//   })
-// );
-
-
 export const createPost = (post, userId) => (
   $.ajax({
     type: 'POST',
@@ -27,7 +19,6 @@ export const createPost = (post, userId) => (
     data: { post }
   })
 );
-
 
 export const updatePost = (newText, postId) => (
   $.ajax({
@@ -38,8 +29,6 @@ export const updatePost = (newText, postId) => (
         body: newText
       }
     },
-    processData: false,
-    contentType: false
   })
 );
 

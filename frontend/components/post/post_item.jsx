@@ -26,9 +26,7 @@ updateForm(e){
 handleSubmit(e){
   e.preventDefault();
   this.setState({ editing: false });
-  debugger;
   this.props.updatePost(this.state.body, this.props.post.id);
-  debugger;
 }
 
 // changeHiddenState(e){
