@@ -60,7 +60,7 @@ render() {
 
   let removeEdit;
   if(currentUser && (currentUser.id === post.author_id || currentUser.id === post.host_id)){
-    removeEdit = (<div>
+    removeEdit = (<div className="post-top-buttons">
           <button className="deletePost" value={`${post.id}`} onClick={deletePost}>Delete</button>
           <button className="editPost" onClick={ ()=>this.setState({ editing: true})}>Edit</button>
       </div>
@@ -78,7 +78,6 @@ render() {
                 <Link className="poster-thumb-img" to={`/profile/${post.author_id}`}>
                   <img src={currentUser.photo_url}/>
                 </Link>
-                { removeEdit }
                 <textarea className="newsfeed-post-textarea"
                           value= { this.state.body }
                           onChange = {this.updateForm}
@@ -95,14 +94,16 @@ render() {
         <li className="post-item">
           <div className="post-content">
             <div className="post-top">
-              <div className="post-author-thumb">
-                <img src={post.thumbnail}/>
-                <Link className="post-thumb-img" to={`/profile/${post.author_id}`}>
-                </Link>
-              </div>
-              <div className="post-name-link">
-                {nameLink}
-                <div className="post-date">{post.date} at {post.time}</div>
+              <div className="post-image-name">
+                <div className="post-author-thumb">
+                  <img src={post.thumbnail}/>
+                  <Link className="post-thumb-img" to={`/profile/${post.author_id}`}>
+                  </Link>
+                </div>
+                <div className="post-name-link">
+                  {nameLink}
+                  <div className="post-date">{post.date} at {post.time}</div>
+                </div>
               </div>
               { removeEdit }
 
