@@ -74,28 +74,28 @@ class AboutInfo extends React.Component {
         school;
 
     if(this.props.user.birthday){
-      birthday = (<li>Birthday: {this.props.user.birthday.slice(5,10)}</li>);
+      birthday = (<li><span>Birthday:</span> {this.props.user.birthday.slice(5,10)}</li>);
     }
     if(this.props.user.current_city){
-      currentCity = (<li>Lives in {this.props.user.current_city}</li>);
+      currentCity = (<li><span>Lives in</span> {this.props.user.current_city}</li>);
     }
     if(this.props.user.home_town){
-      hometown = (<li>From {this.props.user.home_town}</li>);
+      hometown = (<li><span>From</span> {this.props.user.home_town}</li>);
     }
     if(this.props.user.school){
-      school = (<li>Studied at {this.props.user.school}</li>);
+      school = (<li><span>Studied at</span> {this.props.user.school}</li>);
     }
     if(this.props.user.workplace){
-      workplace = (<li>Works at {this.props.user.workplace}</li>);
+      workplace = (<li><span>Works at</span> {this.props.user.workplace}</li>);
     }
     if(this.props.user.relationship){
       relationshipStatus = (
-        <li>Relationship Status: {this.props.user.relationship}</li>
+        <li><span>Relationship Status:</span> {this.props.user.relationship}</li>
       );
     }
 
     return(
-      <ul>
+      <ul className="about-other">
         {birthday}
         {currentCity}
         {hometown}
