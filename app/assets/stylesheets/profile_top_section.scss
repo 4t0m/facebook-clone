@@ -25,6 +25,7 @@
   position: absolute;
   bottom: 15px;
   left: 205px;
+  background: initial;
 }
 
 .profile-cover-name {
@@ -107,8 +108,15 @@
 }
 
 .profile-picture-picture:hover .profile-picture-editpic {
-  display: block;
+  display: table;
 }
+
+.profile-picture-picture:hover .profile-picture-editpic span {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
 
 .profile-picture-editpic {
   display: none;
@@ -118,6 +126,8 @@
   background:black;
   opacity: 0.5;
   text-align: center;
+  font-weight: bold;
+  font-size: 14;
 }
 
 .profile-picture-form {

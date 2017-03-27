@@ -31,8 +31,6 @@ class Header extends React.Component {
               <Link to={"/"} className="app-name">
                 <h2 className="app-name">fbc</h2>
               </Link>
-              <input type="text" className="search-bar"
-                placeholder="Search"></input>
             </div>
             <div className="header-links">
               <Link to={`/profile/${this.props.currentUser.id}`} className="profile-link">

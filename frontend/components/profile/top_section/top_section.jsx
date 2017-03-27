@@ -30,7 +30,7 @@ class TopSection extends React.Component {
         return (
           <div className="profile-picture-editpic" onClick={ () => {
             $('#profile-pic-input').click()
-          }}>
+          }}><span>Upload Photo</span>
             <form className="profile-picture-form" >
               <input id="profile-pic-input" type="file" name="" value="" onChange={this.uploadProfilePic}/>
             </form>
@@ -117,7 +117,7 @@ class TopSection extends React.Component {
       <div className="profile-top-section">
         <div className="profile-cover-photo" style={coverStyle}>
           <div className="profile-cover-info">
-            <div className="profile-cover-name">{fullName}</div>
+            <span className="profile-cover-name">{fullName}</span>
           </div>
           <div className="profile-cover-buttons">
             <div className="profile-cover-friend">{this.friendButton()}</div>
@@ -132,8 +132,6 @@ class TopSection extends React.Component {
           </div>
           <ul className="profile-navigation">
             <li><a>Timeline</a></li>
-            <li><a>About</a></li>
-            <li><a>Friends</a></li>
 
           </ul>
         </div>

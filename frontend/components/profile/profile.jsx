@@ -28,6 +28,14 @@ class Profile extends React.Component {
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.params.id !== nextProps.params.id) {
+      this.props.fetchUser(nextProps.params.id);
+      this.props.findFriendship(nextProps.params.id);
+      this.props.fetchWall(nextProps.params.id);
+    }
+  }
+
   render () {
     return <div>
       <HeaderContainer />
@@ -38,7 +46,6 @@ class Profile extends React.Component {
             <section className="profile-main-left">
               <AboutInfo user={this.props.user} currentUser={this.props.currentUser}
                 updateUser={this.props.updateUser}/>
-              <Friends />
             </section>
             <FeedContainer params={this.props.params}/>
           </div>
