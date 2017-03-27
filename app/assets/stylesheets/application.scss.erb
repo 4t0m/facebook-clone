@@ -15,15 +15,14 @@
  *= require_self
  */
 
-
-@import "base/colors.scss";
-@import "base/fonts.scss";
-@import "base/grid.scss";
-@import "base/layout.scss";
+@import <%= asset_path("base/colors.scss")%>;
+@import <%= asset_path("base/fonts.scss")%>;
+@import <%= asset_path("base/grid.scss")%>;
+@import <%= asset_path("base/layout.scss")%>;
 @import <%= asset_path("base/reset.css")%>;
-@import "welcome.scss";
-@import "header.scss";
-@import "profile.scss";
-@import "profile_top_section.scss";
-@import "static_pages.scss";
-@import "newsfeed.scss"
+@import <%= asset_path("welcome.scss")%>;
+@import <%= asset_path("header.scss")%>;
+@import <%= asset_path("profile.scss")%>;
+@import <%= asset_path("profile_top_section.scss")%>;
+@import <%= asset_path("static_pages.scss")%>;
+@import <%= asset_path("newsfeed.scss")%>;
