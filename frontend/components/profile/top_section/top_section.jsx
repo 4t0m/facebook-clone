@@ -40,7 +40,7 @@ class TopSection extends React.Component {
         return (<div></div>);
       }
     } else {
-      return (<div></div>)
+      return (<div></div>);
       }
   }
 
@@ -113,30 +113,33 @@ class TopSection extends React.Component {
     const userProfilePic = this.props.user ? this.props.user.profile_pic_url : "";
     const profileStyle = {backgroundImage:"url("+userProfilePic+")"};
 
-    return (
-      <div className="profile-top-section">
-        <div className="profile-cover-photo" style={coverStyle}>
-          <div className="profile-cover-info">
-            <span className="profile-cover-name">{fullName}</span>
-          </div>
-          <div className="profile-cover-buttons">
-            <div className="profile-cover-friend">{this.friendButton()}</div>
-          </div>
-        </div>
-
-        <div className="profile-topper-bottom">
-          <div className="profile-picture">
-            <div className="profile-picture-picture" style={profileStyle}>
-              {this.updateProfilePicButton()}
+    if (this.props.user.fname) {
+      return (
+        <div className="profile-top-section">
+          <div className="profile-cover-photo" style={coverStyle}>
+            <div className="profile-cover-info">
+              <span className="profile-cover-name">{fullName}</span>
+            </div>
+            <div className="profile-cover-buttons">
+              <div className="profile-cover-friend">{this.friendButton()}</div>
             </div>
           </div>
-          <ul className="profile-navigation">
-            <li><a>Timeline</a></li>
 
-          </ul>
+          <div className="profile-topper-bottom">
+            <div className="profile-picture">
+              <div className="profile-picture-picture" style={profileStyle}>
+                {this.updateProfilePicButton()}
+              </div>
+            </div>
+            <ul className="profile-navigation">
+              <li><a>Timeline</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
-    );
+      );
+    } else {
+      return <div></div>;
+    }
   }
 }
 

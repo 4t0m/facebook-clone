@@ -5,6 +5,7 @@ class Header extends React.Component {
   constructor(props){
     super(props);
     this.handleLogout = this.handleLogout.bind(this);
+    this.redirectIfLoggedOut = this.redirectIfLoggedOut.bind(this);
   }
 
   componentDidUpdate() {
