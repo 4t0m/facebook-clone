@@ -10,6 +10,8 @@ export const updateUser = (data, id) => (
     type: 'PATCH',
     url: `/api/users/${id}`,
     data,
+    contentType: false,
+    processData: false
   })
 
 );

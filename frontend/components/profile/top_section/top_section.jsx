@@ -7,7 +7,7 @@ class TopSection extends React.Component {
     this.createFriendship = this.createFriendship.bind(this);
     this.removeFriendship = this.removeFriendship.bind(this);
     this.acceptFriendship = this.acceptFriendship.bind(this);
-    this.uploadNewPhoto = this.uploadNewPhoto.bind(this);
+    this.uploadProfilePic = this.uploadProfilePic.bind(this);
     this.updateCoverPicButton = this.updateCoverPicButton.bind(this);
     this.uploadCoverPhoto = this.uploadCoverPhoto.bind(this);
   }
@@ -32,7 +32,7 @@ class TopSection extends React.Component {
             $('#profile-pic-input').click()
           }}>
             <form className="profile-picture-form" >
-              <input id="profile-pic-input" type="file" name="" value="" onChange={this.uploadNewPhoto}/>
+              <input id="profile-pic-input" type="file" name="" value="" onChange={this.uploadProfilePic}/>
             </form>
           </div>
         );
@@ -62,16 +62,15 @@ class TopSection extends React.Component {
   uploadCoverPhoto(e) {
     var file = e.currentTarget.files[0];
     var formData = new FormData();
-    formData.append("user[coverpic]", file);
-    this.props.updateUser(formData);
+    formData.append("user[cover_pic]", file);
+    this.props.updateUser(formData, this.props.currentUser.id);
   }
 
-  uploadNewPhoto(e) {
+  uploadProfilePic(e) {
     var file = e.currentTarget.files[0];
     var formData = new FormData();
-    formData.append("user[profilepic]", file);
-    this.props.updateUser(formData);
-    // .then(() => this.refreshPostsAfterUpload() );
+    formData.append("user[profile_pic]", file);
+    this.props.updateUser(formData, this.props.currentUser.id);
   }
 
   friendButton() {
@@ -107,14 +106,12 @@ class TopSection extends React.Component {
   }
 
   render() {
-    const fullName = this.props.user ? `${this.props.user.fname} ${this.props.user.lname}` : "";
-    const firstName = this.props.user ? `${this.props.user.fname}` : "";
+    const fullName = this.props.user.fname ? `${this.props.user.fname} ${this.props.user.lname}` : "";
+    const firstName = this.props.user.fname ? `${this.props.user.fname}` : "";
     const userCoverPic = this.props.user ? this.props.user.cover_pic_url : "";
     const coverStyle = {backgroundImage:"url("+userCoverPic+")"};
-    // const coverStyle = {};
     const userProfilePic = this.props.user ? this.props.user.profile_pic_url : "";
     const profileStyle = {backgroundImage:"url("+userProfilePic+")"};
-    // const profileStyle = {};
 
     return (
       <div className="profile-top-section">

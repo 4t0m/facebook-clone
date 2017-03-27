@@ -39,7 +39,7 @@ class Api::UsersController < ApplicationController
     params.require(:user)
       .permit(:fname, :lname, :email, :password, :gender, :birthday,
               :school, :workplace, :home_town, :relationship, :current_city,
-              :profile_pic_url, :cover_pic_url)
+              :profile_pic, :cover_pic)
   end
 
 end
