@@ -16,11 +16,11 @@
  */
 
 
-@import "base/colors.scss";
+@import asset-path("base/colors.scss");
 @import "base/fonts.scss";
 @import "base/grid.scss";
 @import "base/layout.scss";
-@import "base/reset.css";
+@import asset-path("base/reset.css");
 @import "welcome.scss";
 @import "header.scss";
 @import "profile.scss";
