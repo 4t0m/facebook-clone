@@ -36,6 +36,10 @@ class Profile extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    this.props.forgetUser();
+  }
+
   render () {
     return <div>
       <HeaderContainer />

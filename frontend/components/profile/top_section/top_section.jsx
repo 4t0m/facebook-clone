@@ -106,6 +106,7 @@ class TopSection extends React.Component {
   }
 
   render() {
+
     const fullName = this.props.user.fname ? `${this.props.user.fname} ${this.props.user.lname}` : "";
     const firstName = this.props.user.fname ? `${this.props.user.fname}` : "";
     const userCoverPic = this.props.user ? this.props.user.cover_pic_url : "";
@@ -138,7 +139,27 @@ class TopSection extends React.Component {
         </div>
       );
     } else {
-      return <div></div>;
+      return <div className="profile-top-section">
+        <div className="profile-cover-photo">
+          <div className="profile-cover-info">
+            <span className="profile-cover-name">{fullName}</span>
+          </div>
+          <div className="profile-cover-buttons">
+            <div className="profile-cover-friend">{this.friendButton()}</div>
+          </div>
+        </div>
+
+        <div className="profile-topper-bottom">
+          <div className="profile-picture">
+            <div className="profile-picture-picture">
+              {this.updateProfilePicButton()}
+            </div>
+          </div>
+          <ul className="profile-navigation">
+            <li><a>Timeline</a></li>
+          </ul>
+        </div>
+      </div>;
     }
   }
 }

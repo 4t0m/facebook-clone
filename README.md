@@ -19,7 +19,6 @@ sufficient CSS styling:
 - [ ] Profiles
 - [ ] Friending
 - [ ] Comments/posting on each others' walls
-- [ ] News Feed
 - [ ] Production README
 
 ## Design Docs
