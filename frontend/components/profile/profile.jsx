@@ -12,7 +12,7 @@ class Profile extends React.Component {
   }
 
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchUser(this.props.params.id);
     this.props.findFriendship(this.props.params.id);
     this.props.fetchWall(this.props.params.id);
