@@ -1,0 +1,1158 @@
+/* line 1, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/header.scss */
+input[type="text"] {
+  background-color: #ffffff;
+}
+
+/* line 5, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/header.scss */
+.header-container {
+  background-color: #3b5998;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 45px;
+  width: 100%;
+}
+
+/* line 14, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/header.scss */
+.header-bar {
+  background-color: #3b5998;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 45px;
+  width: 1000px;
+  position: relative;
+  left: -100px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* line 27, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/header.scss */
+.logo-and-search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* line 33, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/header.scss */
+.logo-and-search h2 {
+  margin-right: 10px;
+  font-size: 25px;
+}
+
+/* line 38, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/header.scss */
+.search-bar {
+  color: black;
+  padding: 3px 5px;
+  font-size: 14px;
+  font-weight: normal;
+  box-sizing: border-box;
+  border-radius: 2px;
+  border: 1px solid black;
+  width: 500px;
+  height: 25px;
+}
+
+/* line 51, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/header.scss */
+.header-links {
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 200px;
+}
+/* line 1, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.main-feed {
+  width: 900px;
+  margin: 20px auto;
+  display: flex;
+}
+
+/* line 7, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f7f7f7;
+  min-height: 1200px;
+}
+
+/* line 15, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.home-newsfeed-container {
+  margin-left: -350px;
+  margin-top: 30px;
+}
+
+/* line 20, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.post-thumb-img img {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* line 27, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.post-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* line 34, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.post-image-name {
+  display: flex;
+}
+
+/* line 38, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.post-text {
+  box-sizing: border-box;
+  background: white;
+  border: 1px solid #e5e6e9 #dfe0e4 #d0d1d5;
+}
+
+/* line 44, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.post-author-thumb {
+  display: flex;
+}
+
+/* line 48, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.post-author-thumb img {
+  height: 40px;
+  width: 40px;
+}
+
+/* line 53, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.post-name-link-real {
+  text-transform: capitalize;
+  display: flex;
+  margin: 0 10px;
+}
+
+/* line 59, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.post-date {
+  color: #90949c;
+  font-size: 12px;
+  font-weight: normal;
+  margin-top: 3px;
+  margin-left: 10px;
+}
+
+/* line 67, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.post-item {
+  background: white;
+  border: 1px solid #D3D3D3;
+  margin-bottom: 10px;
+  /*padding: 12px;*/
+  position: relative;
+}
+
+/* line 75, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.post-name-link {
+  display: flex;
+  flex-direction: column;
+  color: #365899;
+  font-weight: bolder;
+  font-size: 15px;
+  margin-left: 7px;
+}
+
+/* line 84, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.post-text {
+  margin-top: 10px;
+  margin-bottom: 2px;
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+
+/* line 91, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.post-content {
+  padding-bottom: 25px;
+  padding: 12px 15px 0 15px;
+}
+
+/* line 96, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.post-img img {
+  margin-top: 5px;
+  margin-bottom: 7px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border: 1px solid #D3D3D3;
+}
+
+/* line 105, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.dropdown {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+}
+
+/* line 111, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.dropdown > div {
+  position: relative;
+}
+
+/* line 118, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.dropdown > div:hover .deleteEdit {
+  display: block;
+}
+
+/* line 122, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.deletePost:hover {
+  background: #f7f7f7;
+}
+
+/* line 126, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.editPost:hover {
+  background: #f7f7f7;
+}
+
+/* line 130, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.deletePost, .editPost {
+  padding: 3px 5px 3px 5px;
+  margin: 0px 0;
+  font-size: 13px;
+  font-weight: bold;
+  color: #696969;
+}
+
+/* line 141, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.deleteContainer {
+  position: relative;
+}
+
+/* line 145, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.borderline {
+  position: absolute;
+  right: 4px;
+  bottom: 0;
+  width: 40px;
+  height: 1px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* line 154, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.deleteEdit {
+  z-index: 1;
+  background: white;
+  position: absolute;
+  top: 13px;
+  right: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: #1d2129;
+  display: none;
+  font-size: 13px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+}
+
+/* line 168, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.left-feed {
+  width: 184px;
+  min-height: 500px;
+}
+
+/* line 173, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.newsfeed-post-section {
+  width: 500px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+/* line 179, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.newsfeed-postform {
+  background: white;
+  border: 1px solid #D3D3D3;
+}
+
+/* line 184, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.newsfeed-image-upload {
+  overflow: hidden;
+  position: relative;
+  font-size: 13px;
+  display: inline-block;
+  color: #365899;
+}
+
+/* line 193, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.newsfeed-image-upload > div {
+  font-weight: bolder;
+}
+
+/* line 197, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.newsfeed-image-upload [type=file] {
+  cursor: pointer;
+  display: block;
+  font-size: 999px;
+  filter: alpha(opacity=0);
+  min-height: 100%;
+  min-width: 100%;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  top: 0;
+}
+
+/* line 211, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.newsfeed-post-body {
+  display: block;
+  position: relative;
+  padding: 4px 0;
+}
+
+/* line 217, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.newsfeed-post-content {
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 25px;
+}
+
+/* line 224, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.poster-thumb-img img {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* line 231, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.newsfeed-postform {
+  padding: 12px;
+  position: relative;
+  margin-bottom: 20px;
+  border: 1px solid #e5e6e9 #dfe0e4 #d0d1d5;
+}
+
+/* line 238, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.newsfeed-image-upload {
+  padding-bottom: 8px;
+}
+
+/* line 243, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.poster-thumb-img, .newsfeed-post-textarea {
+  padding-top: 10px;
+  padding-bottom: 8px;
+}
+
+/* line 248, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.newsfeed-post-textarea {
+  margin-left: 15px;
+  font-size: 15px;
+  width: 350px;
+  resize: none;
+}
+
+/* line 255, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.post-submit-button {
+  color: white;
+  background: #3b5998;
+  padding: 4px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 3px;
+  margin-top: 8px;
+  position: absolute;
+  right: 10px;
+  bottom: 8px;
+  cursor: pointer;
+}
+
+/* line 269, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.newsfeed-photo-upload img {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+}
+
+/* line 275, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.newsfeed-photo-upload {
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+/* line 280, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.poster-thumb-img {
+  float: left;
+}
+
+/* line 284, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.authorToTarget {
+  display: flex;
+  align-items: center;
+}
+
+/* line 289, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.authorToTarget span {
+  color: #90949c;
+}
+
+/* line 293, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.authorToTarget img {
+  margin: 0 5px;
+}
+
+/* line 297, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.edit-sign {
+  color: #365899;
+  font-size: 15px;
+  font-weight: bolder;
+  margin-bottom: 8px;
+}
+
+/* line 304, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.like-bar {
+  margin: 0 15px 5px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* line 311, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.likeToken {
+  display: flex;
+  position: relative;
+  padding-top: 10px;
+  margin-top: -10px;
+}
+
+/* line 318, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.likeToken > label {
+  font-size: 13px;
+  margin-left: 3px;
+  padding-top: 1px;
+}
+
+/* line 324, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.showLikers:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* line 329, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.likers-details {
+  font-size: 12px;
+  color: white;
+  padding: 5px 5px 2px 5px;
+  background: #1C1C1C;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  position: absolute;
+  bottom: 25px;
+  right: -15px;
+  display: none;
+}
+
+/* line 342, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.likeToken:hover .likers-details {
+  display: block;
+}
+
+/* line 346, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.likers-details > li {
+  margin-bottom: 3px;
+}
+
+/* line 350, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.liker:hover {
+  color: #4080ff;
+}
+
+/* line 354, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.like-button {
+  margin-top: 2px;
+}
+
+/* line 358, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.unlike-button {
+  margin-left: 1px;
+}
+
+/* line 362, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.liker-name {
+  display: flex;
+}
+
+/* line 366, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.liker-firstname {
+  margin-right: 3px;
+}
+
+/* line 370, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.mini-userthumb img {
+  height: 20px;
+  width: 20px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+/* line 377, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.left-feed {
+  margin-top: 10px;
+}
+
+/* line 381, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.userpage-link, .newsfeed-link {
+  display: flex;
+  font-size: 13px;
+  align-items: center;
+  margin-bottom: 10px;
+  border: 1px solid #e9ebee;
+}
+
+/* line 389, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.mini-userlabel, .mini-newsfeedlabel {
+  margin-left: 5px;
+}
+
+/* line 393, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.userpage-link:hover, .newsfeed-link:hover {
+  background: #f6f7f9;
+  border: 1px solid #e5e6e9;
+  cursor: pointer;
+}
+
+/* line 399, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.right-feed {
+  width: 320px;
+  height: 535px;
+  background: white;
+  border-radius: 1px;
+  border: 1px solid #D3D3D3;
+  position: relative;
+}
+
+/* line 408, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.nights-watch {
+  margin-top: 10px;
+  margin-left: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* line 415, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.nights-watch img {
+  width: 250px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* line 421, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.about-me {
+  margin: 10px;
+  color: #365899;
+  font-size: 15px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+/* line 430, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.about-me > div {
+  margin-bottom: 10px;
+}
+
+/* line 434, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.portfolio img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* line 441, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.linkedin img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+/* line 447, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.github img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+}
+
+/* line 453, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.portfolio-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* line 459, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.sticky {
+  background: white;
+  border-radius: 1px;
+  border-right: 1px solid #D3D3D3;
+  border-left: 1px solid #D3D3D3;
+  border-bottom: 1px solid #D3D3D3;
+  padding-left: 10px;
+  margin-left: -1px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-top: 1px solid #e5e5e5;
+  margin-top: -10px;
+}
+
+/* line 473, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/newsfeed.scss */
+.sticky > ul {
+  padding-right: 9px;
+}
+/* line 1, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile.scss */
+.profile-container {
+  display: flex;
+  justify-content: center;
+  background-color: #f7f7f7;
+}
+
+/* line 7, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile.scss */
+.profile-body {
+  background-color: #f7f7f7;
+  width: 860px;
+  left: -100px;
+  position: relative;
+}
+
+/* line 15, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile.scss */
+.profile-main {
+  display: flex;
+  justify-content: space-between;
+  min-height: 800px;
+}
+
+/* line 21, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile.scss */
+.about-info {
+  width: 300px;
+  background-color: #ffffff;
+  border: 1px solid #dfe3ee;
+}
+
+/* line 27, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile.scss */
+.own-info {
+  height: 475px;
+}
+
+/* line 31, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile.scss */
+.other-info {
+  height: 300px;
+}
+
+/* line 35, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile.scss */
+.about-info ul {
+  padding: 0 10px;
+}
+
+/* line 39, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile.scss */
+.about-info li {
+  padding: 10px 0;
+}
+
+/* line 43, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile.scss */
+.about-info h3 {
+  font-weight: 550;
+}
+
+/* line 47, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile.scss */
+.about-info input[type="text"],
+.about-info input[type="date"] {
+  color: black;
+  padding: 3px 5px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #dfe3ee;
+  width: 100%;
+}
+
+/* line 57, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile.scss */
+.about-info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+}
+
+/* line 64, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile.scss */
+.about-user-save {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  height: 25px;
+  background-color: #3b5998;
+  padding: 3px 5px;
+  border-radius: 2px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+/* line 76, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile.scss */
+.about-other span {
+  font-weight: 600;
+}
+/* line 10, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile_top_section.scss */
+.profile-top-section {
+  padding-bottom: 20px;
+}
+
+/* line 14, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile_top_section.scss */
+.profile-cover-photo {
+  height: 315px;
+  border-left: 1px solid #868589;
+  border-right: 1px solid #868589;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* line 24, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile_top_section.scss */
+.profile-cover-info {
+  position: absolute;
+  bottom: 15px;
+  left: 205px;
+  background: initial;
+}
+
+/* line 31, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile_top_section.scss */
+.profile-cover-name {
+  font-size: 24px;
+  color: white;
+  text-shadow: -1px -1px 0 #615F61, 1px -1px 0 #615F61, -1px 1px 0 #615F61, 1px 1px 0 #615F61;
+  text-transform: capitalize;
+}
+
+/* line 42, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile_top_section.scss */
+.profile-cover-buttons {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+/* line 48, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile_top_section.scss */
+.profile-cover-friend {
+  background: #F6F7F9;
+  color: #4b4f56;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 4px 9px;
+  border: 1px solid black;
+}
+
+/* line 58, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile_top_section.scss */
+.friended {
+  width: 60px;
+  text-align: center;
+}
+
+/* line 63, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile_top_section.scss */
+.pending {
+  width: 140px;
+  text-align: center;
+}
+
+/* line 68, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile_top_section.scss */
+.profile-cover-friend:hover {
+  background: #E9EBEE;
+  cursor: pointer;
+}
+
+/* line 73, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile_top_section.scss */
+.profile-cover-friend-toggle {
+  display: none;
+}
+
+/* line 77, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile_top_section.scss */
+.profile-cover-friend:hover .profile-cover-friend-toggle {
+  display: block;
+}
+
+/* line 81, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile_top_section.scss */
+.profile-cover-friend:hover .profile-cover-friend-status {
+  display: none;
+}
+
+/* line 85, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile_top_section.scss */
+.profile-topper-bottom {
+  height: 45px;
+  position: relative;
+  border: 1px solid #D3D6DB;
+}
+
+/* line 91, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile_top_section.scss */
+.profile-picture {
+  padding: 5px;
+  background: white;
+  border: 1px solid #B3B3B3;
+  float: left;
+  margin: 0 auto;
+  position: absolute;
+  top: -140px;
+  left: 15px;
+}
+
+/* line 102, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile_top_section.scss */
+.profile-picture-picture {
+  width: 160px;
+  height: 160px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* line 110, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile_top_section.scss */
+.profile-picture-picture:hover .profile-picture-editpic {
+  display: table;
+}
+
+/* line 114, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile_top_section.scss */
+.profile-picture-picture:hover .profile-picture-editpic span {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* line 121, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile_top_section.scss */
+.profile-picture-editpic {
+  display: none;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background: black;
+  opacity: 0.5;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14;
+}
+
+/* line 133, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile_top_section.scss */
+.profile-picture-form {
+  display: none;
+}
+
+/* line 137, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile_top_section.scss */
+.profile-cover-form {
+  display: none;
+}
+
+/* line 141, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile_top_section.scss */
+.profile-picture-editpic:hover {
+  cursor: pointer;
+}
+
+/* line 145, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile_top_section.scss */
+.profile-picture-editpic .material-icons {
+  font-size: 92px;
+  height: 160px;
+  line-height: 160px;
+}
+
+/* line 151, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile_top_section.scss */
+.profile-navigation {
+  margin-left: 200px;
+  float: left;
+  border-left: 1px solid #E9EAED;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/* line 160, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile_top_section.scss */
+.profile-navigation a {
+  color: #365899;
+  text-decoration: none;
+}
+
+/* line 166, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile_top_section.scss */
+.profile-navigation li {
+  float: left;
+  border-right: 1px solid #E9EAED;
+  padding: 15px;
+}
+
+/* line 172, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/profile_top_section.scss */
+.profile-navigation li:hover {
+  background: #E9EBEE;
+}
+/* PHASE 0: Reset */
+/* line 4, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/reset.scss */
+html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  font-family: sans-serif;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: none;
+  vertical-align: inherit;
+  box-sizing: border-box;
+  background: inherit;
+}
+
+/* line 23, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 27, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/reset.scss */
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* line 33, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/reset.scss */
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="submit"],
+textarea,
+button {
+  /*
+  Get rid of native styling. Read more here:
+  http://css-tricks.com/almanac/properties/a/appearance/
+  */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* line 48, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/reset.scss */
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+/* Clearfix */
+/* line 55, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/reset.scss */
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+/* line 1, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/welcome.scss */
+input[type="password"],
+input[type="text"] {
+  background-color: #ffffff;
+}
+
+/* line 6, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/welcome.scss */
+.welcome-header-container {
+  background-color: #3b5998;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 90px;
+}
+
+/* line 14, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/welcome.scss */
+.welcome-header {
+  display: flex;
+  background-color: #3b5998;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #ffffff;
+  height: 90px;
+  width: 980px;
+  padding: 10px 0;
+}
+
+/* line 26, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/welcome.scss */
+.welcome-header h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* line 31, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/welcome.scss */
+.login-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* line 37, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/welcome.scss */
+.login-field {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 8px;
+}
+
+/* line 43, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/welcome.scss */
+.login-field input[type="password"],
+.login-field input[type="text"] {
+  color: black;
+  padding: 3px 5px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  width: 110px;
+}
+
+/* line 52, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/welcome.scss */
+.login-button {
+  font-weight: bold;
+  background-color: #3b5998;
+  margin-left: 8px;
+  padding: 3px 5px;
+  border-radius: 2px;
+  border: 1px solid black;
+}
+
+/* line 61, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/welcome.scss */
+.welcome-body {
+  background-color: #dfe3ee;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 750px;
+  color: #333;
+}
+
+/* line 70, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/welcome.scss */
+.body-container {
+  display: flex;
+  flex-direction: row;
+  background-color: #dfe3ee;
+  justify-content: space-between;
+  position: absolute;
+  top: 90px;
+  bottom: 0;
+  width: 980px;
+  height: 750px;
+  padding-top: 40px;
+}
+
+/* line 84, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/welcome.scss */
+.col-1-4 {
+  width: 25%;
+}
+
+/* line 88, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/welcome.scss */
+.welcome-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-weight: bold;
+  width: 565px;
+}
+
+/* line 97, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/welcome.scss */
+.welcome-details h2 {
+  width: 450px;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 34px;
+  padding-top: 42px;
+  padding-bottom: 24px;
+}
+
+/* line 107, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/welcome.scss */
+.welcome-details-item {
+  font-size: 15px;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  color: #666;
+}
+
+/* line 114, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/welcome.scss */
+.welcome-details-item p {
+  top: 15px;
+  left: 30px;
+}
+
+/* line 119, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/welcome.scss */
+.welcome-details-item strong {
+  font-size: 17px;
+  font-weight: bold;
+  color: #333;
+  margin-right: 10px;
+}
+
+/* line 127, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/welcome.scss */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 400px;
+}
+
+/* line 135, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/welcome.scss */
+.signup-form input[type="password"],
+.signup-form input[type="text"] {
+  color: black;
+  padding: 3px 5px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  border-radius: 7px;
+  margin-bottom: 15px;
+  padding: 10px;
+  width: 400px;
+}
+
+/* line 147, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/welcome.scss */
+.signup-form .heading {
+  margin: 30px 0;
+}
+
+/* line 151, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/welcome.scss */
+.signup-form h1 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* line 156, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/welcome.scss */
+.fname {
+  margin-right: 10px;
+}
+
+/* line 160, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/welcome.scss */
+.signup-form .name-input input {
+  width: 195px;
+}
+
+/* line 164, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/welcome.scss */
+.large-button {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  height: 40px;
+  padding: 0 4px;
+  border-radius: 7px;
+  border: 1px solid black;
+  width: 160px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* line 177, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/welcome.scss */
+.create-account {
+  background-color: #59983b;
+}
+
+/* line 182, /home/adom/Desktop/app-academy/facebook_clone_1/app/assets/stylesheets/welcome.scss */
+.footer {
+  background-color: #ffffff;
+  height: 150px;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+
+ */
