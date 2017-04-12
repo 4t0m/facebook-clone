@@ -20,6 +20,7 @@ module FacebookClone
       :storage => :s3,
       :s3_region => ENV['s3_region'],
       :s3_host_name => 's3-us-west-1.amazonaws.com',
+      :s3_protocol => :https,
       :s3_credentials => {
         :bucket => ENV["s3_bucket"],
         :access_key_id => ENV["s3_access_key_id"],
