@@ -33,6 +33,7 @@ class PostForm extends React.Component {
       else{
         placeHolder = `Write something to ${this.props.user.fname}`;
       }
+      
       return(
         <form className="newsfeed-postform" onSubmit={this.handleSubmit}>
 

@@ -70,7 +70,7 @@ render() {
             <div className="newsfeed-post-content">
               <div className="newsfeed-post-body group">
                 <Link className="poster-thumb-img" to={`/profile/${post.author_id}`}>
-                  <img src={currentUser.photo_url}/>
+                  <img src={currentUser.profile_pic_url}/>
                 </Link>
                 <textarea className="newsfeed-post-textarea"
                           value= { this.state.body }
@@ -99,7 +99,7 @@ render() {
                   <div className="post-date">{post.date} at {post.time}</div>
                 </div>
               </div>
-              { removeEdit }
+              {removeEdit}
 
             </div>
 
