@@ -30,7 +30,7 @@ class Header extends React.Component {
           <div className="header-bar">
             <div className="logo-and-search">
               <Link to={"/"} className="app-name">
-                <h2 className="app-name">fbc</h2>
+                <h2 className="app-name">Nom de Plume</h2>
               </Link>
             </div>
             <div className="header-links">
