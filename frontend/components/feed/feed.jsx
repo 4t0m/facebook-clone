@@ -9,7 +9,20 @@ class Feed extends React.Component{
   }
 
   componentDidUpdate(prevProps){
-    if(prevProps.params !== this.props.params) {
+    if (this.props.currentUser) {
+      if(prevProps.params !== this.props.params) {
+        if (this.props.params.id) {
+          this.props.fetchWall(this.props.params.id);
+        } else {
+          this.props.fetchFeed(this.props.currentUser.id);
+        }
+      }
+    }
+
+  }
+
+  componentDidMount(){
+    if (this.props.currentUser) {
       if (this.props.params.id) {
         this.props.fetchWall(this.props.params.id);
       } else {
@@ -18,15 +31,11 @@ class Feed extends React.Component{
     }
   }
 
-  componentDidMount(){
-    if (this.props.params.id) {
-      this.props.fetchWall(this.props.params.id);
-    } else {
-      this.props.fetchFeed(this.props.currentUser.id);
-    }
-  }
-
   render(){
+    if (!this.props.currentUser) {
+      return <div></div>;
+    }
+
     let posts = this.props.posts;
     let postForm;
     if ((this.props.friendship && this.props.friendship.id)) {
