@@ -23,6 +23,8 @@ class AboutInfo extends React.Component {
     formData.append("user[workplace]", $('input[name="workplace"]').val());
     formData.append("user[home_town]", $('input[name="hometown"]').val());
     formData.append("user[current_city]", $('input[name="currentCity"]').val());
+
+
     this.props.updateUser(formData, this.props.currentUser.id);
   }
 
