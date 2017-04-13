@@ -5,6 +5,7 @@ class AboutInfo extends React.Component {
   constructor(props){
     super(props);
     this.submitProfileEdit = this.submitProfileEdit.bind(this);
+    this.state = { saveStatus: "" };
   }
 
   parseDateString(dateString) {
@@ -24,39 +25,39 @@ class AboutInfo extends React.Component {
     formData.append("user[home_town]", $('input[name="hometown"]').val());
     formData.append("user[current_city]", $('input[name="currentCity"]').val());
 
+    this.props.updateUser(formData, this.props.currentUser.id).then(() => this.setState({ saveStatus: "Saved" }));
 
-    this.props.updateUser(formData, this.props.currentUser.id);
   }
 
   saveEditButton() {
     if (this.props.user) {
       if (this.props.currentUser &&
         this.props.currentUser.id === this.props.user.id) {
-        return <div className="about-user-save"
+        return <div className="about-user-save-button"
           onClick={this.submitProfileEdit}>Save Changes</div>;
       }
     }
   }
 
-
-
   thisUserInfo() {
     let birthday, currentCity, hometown, relationshipStatus, workplace,
         school;
 
+    let setEditing = () => this.setState({ saveStatus: "Unsaved"} );
+
     birthday = (<li>Birthday: <input type="date" name="birthday"
-      defaultValue={this.props.user.birthday} /></li>);
+      defaultValue={this.props.user.birthday}  onChange={setEditing}/></li>);
     currentCity = (<li>Lives in <input type="text" name="currentCity"
-      defaultValue={this.props.user.current_city} /></li>);
+      defaultValue={this.props.user.current_city}  onChange={setEditing}/></li>);
     hometown = (<li>From <input type="text" name="hometown"
-      defaultValue={this.props.user.home_town} /></li>);
+      defaultValue={this.props.user.home_town}  onChange={setEditing}/></li>);
     school = (<li>Studied at <input type="text" name="school"
-      defaultValue={this.props.user.school} /></li>);
+      defaultValue={this.props.user.school}  onChange={setEditing}/></li>);
     workplace = (<li>Works at <input type="text" name="workplace"
-      defaultValue={this.props.user.workplace} /></li>);
+      defaultValue={this.props.user.workplace}  onChange={setEditing}/></li>);
     relationshipStatus = (<li>
       Relationship Status: <input type="text" name="relationship"
-      defaultValue={this.props.user.relationship} />
+      defaultValue={this.props.user.relationship} onChange={setEditing}/>
       </li>);
 
     return(
@@ -125,7 +126,7 @@ class AboutInfo extends React.Component {
         <div className={`about-info ${infoClass}`}>
           <div className="about-info-header">
             <h3>Intro</h3>
-            {this.saveEditButton()}
+            <div className="about-user-save"><p>{this.state.saveStatus}</p> {this.saveEditButton()}</div>
           </div>
           {aboutInfo}
         </div>

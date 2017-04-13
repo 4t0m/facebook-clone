@@ -61,6 +61,16 @@
 }
 
 .about-user-save {
+  display: flex;
+  align-items: center;
+}
+
+.about-user-save p {
+  color: gray;
+  padding-right: 10px;
+}
+
+.about-user-save-button {
   color: #ffffff;
   font-size: 14px;
   font-weight: bold;
@@ -71,6 +81,7 @@
   border: 1px solid black;
   cursor: pointer;
 }
+
 
 .about-other span {
   font-weight: 600;
