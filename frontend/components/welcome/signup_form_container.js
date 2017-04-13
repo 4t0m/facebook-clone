@@ -3,7 +3,8 @@ import { signup } from '../../actions/session_actions';
 import SignupForm from './signup_form';
 
 const mapStateToProps = (state) => ({
-  user: { email: "", password: "", fname: "", lname: "" }
+  user: { email: "", password: "", fname: "", lname: "" },
+  session: state.session
 });
 
 const mapDispatchToProps = dispatch => ({

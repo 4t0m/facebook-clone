@@ -184,6 +184,26 @@ margin-right: 10px;
   background-color: #59983b;
 }
 
+.input-container {
+  position:relative;
+  float: left;
+  display: block;
+}
+
+.error-icon {
+  position: absolute;
+  top: 8px;
+  left: 370px;
+  height: 25px;
+  width: 25px;
+  z-index: 2;
+  background-color: transparent;
+}
+
+.error-icon-name {
+  left: 165px;
+}
+
 
 .footer {
   background-color: #ffffff;
