@@ -2,7 +2,7 @@ import React from 'react';
 
 const WelcomeDetails = () => (
   <div className="welcome-details">
-    <h2>Connect with friends and the <br/>world around you on Facebook Clone.</h2>
+    <h2>Connect with great authors from<br/>around the world on Nom de Plume.</h2>
     <div className="welcome-details-item group">
       <p><strong>See photos and updates</strong> from friends in News Feed.</p>
     </div>

@@ -7,9 +7,9 @@ import SignupFormContainer from './signup_form_container';
 const Welcome = ({ currentUser, login, logout, signup }) => {
   return (
     <div className="main-container">
-      <div className="welcome-header-container">        
+      <div className="welcome-header-container">
         <div className="welcome-header">
-          <h1>Facebook Clone</h1>
+          <h1>Nom de Plume</h1>
           <LoginFormContainer login={login}/>
         </div>
       </div>

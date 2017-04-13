@@ -1,5 +1,5 @@
 {
-  "name": "FacebookClone",
+  "name": "NomdePlume",
   "version": "1.0.0",
   "description": "[Heroku link][heroku]",
   "main": "index.js",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "hub:4t0m/FacebookClone"
+    "url": "hub:4t0m/nom-de-plume"
   },
   "keywords": [],
   "author": "",
