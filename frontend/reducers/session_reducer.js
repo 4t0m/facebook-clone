@@ -4,7 +4,7 @@ import merge from 'lodash/merge';
 
 const _nullUser = Object.freeze({
   currentUser: null,
-  errors: []
+  errors: {}
 });
 
 const SessionReducer = (state = _nullUser, action) => {
