@@ -37,7 +37,7 @@ class SignupForm extends React.Component {
     });
 
     if (hasErrors()) {
-      errorMessage = "There was a problem creating your account.\nHover over warning the icons for more information. "
+      errorMessage = "There was a problem creating your account.\nHover over the warning icons for more information. "
     }
 
     return (

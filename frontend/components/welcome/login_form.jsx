@@ -34,8 +34,15 @@ class LoginForm extends React.Component {
   }
 
   render () {
+    let errorMessage = "";
+    console.log(this.props);
+    if (this.props.errors && this.props.errors.login) {
+      errorMessage = "Sorry, we couldn't find a user with those credentials.";
+    }
+
     return (
         <form className="login-form" onSubmit={this.handleSubmit}>
+          <p>{errorMessage}</p>
           <section className="login-field">
             <label htmlFor="email">Email</label>
             <input type="text" onChange={this.update('email')}

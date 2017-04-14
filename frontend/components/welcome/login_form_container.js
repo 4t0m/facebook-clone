@@ -4,7 +4,8 @@ import LoginForm from './login_form';
 
 const mapStateToProps = (state) => ({
   user: { email: "", password: "" },
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  errors: state.session.errors
 });
 
 const mapDispatchToProps = dispatch => ({
