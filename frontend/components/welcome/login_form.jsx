@@ -35,34 +35,34 @@ class LoginForm extends React.Component {
 
   render () {
     let errorMessage = "";
-    console.log(this.props);
     if (this.props.errors && this.props.errors.login) {
       errorMessage = "Sorry, we couldn't find a user with those credentials.";
     }
 
     return (
         <form className="login-form" onSubmit={this.handleSubmit}>
+          <div className="login-inputs-buttons">
+            <section className="login-field">
+              <label htmlFor="email">Email</label>
+              <input type="text" onChange={this.update('email')}
+                name="email" value={this.state.email} />
+            </section>
+            <section className="login-field">
+              <label htmlFor="password">Password</label>
+                <input type="password" onChange={this.update('password')}
+                  name="password" value={this.state.password} />
+            </section>
+            <section>
+              <br></br>
+              <input type="submit" name="submit" value="Log In" className="login-button"/>
+            </section>
+            <section>
+              <br></br>
+                <button className="login-button" onClick={this.handleGuest}
+                   value="Guest Login">Guest Login</button>
+            </section>
+          </div>
           <p>{errorMessage}</p>
-          <section className="login-field">
-            <label htmlFor="email">Email</label>
-            <input type="text" onChange={this.update('email')}
-              name="email" value={this.state.email} />
-          </section>
-          <section className="login-field">
-            <label htmlFor="password">Password</label>
-              <input type="password" onChange={this.update('password')}
-                name="password" value={this.state.password} />
-          </section>
-          <section>
-            <br></br>
-            <input type="submit" name="submit" value="Log In" className="login-button"/>
-          </section>
-          <section>
-            <br></br>
-              <button className="login-button" onClick={this.handleGuest}
-                 value="Guest Login">Guest Login</button>
-          </section>
-
         </form>
     );
   }
