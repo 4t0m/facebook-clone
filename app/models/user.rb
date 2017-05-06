@@ -37,10 +37,10 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: :true
 
-  has_attached_file :profile_pic, default_url: "https://s3-us-west-1.amazonaws.com/facebookclone-dev/users/profile_pics/000/000/003/original/missing.png"
+  has_attached_file :profile_pic, default_url: "https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/profile_pics/missing.png"
   validates_attachment_content_type :profile_pic, content_type: /\Aimage\/.*\Z/
 
-  has_attached_file :cover_pic, default_url: "https://s3-us-west-1.amazonaws.com/facebookclone-dev/users/cover_pics/000/000/001/original/no-cover.png"
+  has_attached_file :cover_pic, default_url: "https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/cover_pics/no-cover.png"
   validates_attachment_content_type :cover_pic, content_type: /\Aimage\/.*\Z/
 
   # has_many :friendships_requested,
@@ -71,7 +71,7 @@ class User < ActiveRecord::Base
     return nil unless user
     user.password_is?(password) ? user : nil
   end
-
+  
   def password_is?(password)
     bcrypt_obj = BCrypt::Password.new(self.password_digest)
     bcrypt_obj.is_password?(password)
