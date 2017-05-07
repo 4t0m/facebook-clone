@@ -71,7 +71,7 @@ class User < ActiveRecord::Base
     return nil unless user
     user.password_is?(password) ? user : nil
   end
-  
+
   def password_is?(password)
     bcrypt_obj = BCrypt::Password.new(self.password_digest)
     bcrypt_obj.is_password?(password)
@@ -81,6 +81,14 @@ class User < ActiveRecord::Base
     self.session_token = new_session_token
     self.save
     self.session_token
+  end
+
+  def profile_pic_url
+    profile_pic.to_s
+  end
+
+  def cover_pic_url
+    cover_pic.to_s
   end
 
   def friends
