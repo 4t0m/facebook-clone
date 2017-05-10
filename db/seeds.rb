@@ -1,73 +1,67 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# TODO Fix this absolutely ridiculous seeding method (it is visiting each url and downloading the pictures!)
 
 guest = User.create!(fname: "Guest", lname: "User", email: "guest@domain.com", password: "password")
-guest.profile_pic_url = "https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/profile_pics/missing.png"
-guest.cover_pic_url = "https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/cover_pics/no-cover.png"
+guest.profile_pic_from_url("https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/profile_pics/missing.png")
+guest.cover_pic_from_url("https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/cover_pics/no-cover.png")
 guest.save!
 
 dfw = User.create!(fname: "David", lname: "Foster Wallace", email: "dfw@domain.com", password: "password")
-dfw.profile_pic_url = "https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/profile_pics/000/000/002/original/DFW.jpg"
-dfw.cover_pic_url = "https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/cover_pics/no-cover.png"
+dfw_pic = dfw.profile_pic_from_url("https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/profile_pics/000/000/002/original/DFW.jpg")
+dfw.cover_pic_from_url("https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/cover_pics/no-cover.png")
 dfw.birthday = "1962-02-21"
 dfw.save!
 
 wilde = User.create!(fname: "Oscar", lname: "Wilde", email: "wilde@domain.com", password: "password")
-wilde.profile_pic_url = "https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/profile_pics/000/000/003/original/Wilde.jpg"
-wilde.cover_pic_url = "https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/cover_pics/no-cover.png"
+wilde_pic = wilde.profile_pic_from_url("https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/profile_pics/000/000/003/original/Wilde.jpg")
+wilde.cover_pic_from_url("https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/cover_pics/no-cover.png")
 wilde.birthday = "1854-10-16"
 wilde.save!
 
 adams = User.create!(fname: "Douglas", lname: "Adams", email: "adams@domain.com", password: "password")
-adams.profile_pic_url = "https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/profile_pics/000/000/004/original/Adams.jpg"
-adams.cover_pic_url = "https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/cover_pics/no-cover.png"
+adams_pic = adams.profile_pic_from_url("https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/profile_pics/000/000/004/original/Adams.jpg")
+adams.cover_pic_from_url("https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/cover_pics/no-cover.png")
 adams.birthday = "1952-03-11"
 adams.save!
 
 sanderson = User.create!(fname: "Brandon", lname: "Sanderson", email: "sanderson@domain.com", password: "password")
-sanderson.profile_pic_url = "https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/profile_pics/000/000/005/original/Sanderson.jpg"
-sanderson.cover_pic_url = "https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/cover_pics/no-cover.png"
+sanderson_pic = sanderson.profile_pic_from_url("https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/profile_pics/000/000/005/original/Sanderson.jpg")
+sanderson.cover_pic_from_url("https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/cover_pics/no-cover.png")
 sanderson.birthday = "1975-12-19"
 sanderson.save!
 
 salinger = User.create!(fname: "J. D.", lname: "Salinger", email: "salinger@domain.com", password: "password")
-salinger.profile_pic_url = "https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/profile_pics/000/000/006/original/Salinger.jpg"
-salinger.cover_pic_url = "https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/cover_pics/no-cover.png"
+salinger_pic = salinger.profile_pic_from_url("https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/profile_pics/000/000/006/original/Salinger.jpg")
+salinger.cover_pic_from_url("https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/cover_pics/no-cover.png")
 salinger.birthday = "1919-01-01"
 salinger.save!
 
 plath = User.create!(fname: "Sylvia", lname: "Plath", email: "plath@domain.com", password: "password")
-plath.profile_pic_url = "https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/profile_pics/000/000/007/original/Plath.jpg"
-plath.cover_pic_url = "https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/cover_pics/no-cover.png"
+plath_pic = plath.profile_pic_from_url("https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/profile_pics/000/000/007/original/Plath.jpg")
+plath.cover_pic_from_url("https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/cover_pics/no-cover.png")
 plath.birthday = "1932-10-27"
 plath.save!
 
 vinge = User.create!(fname: "Vernor", lname: "Vinge", email: "vinge@domain.com", password: "password")
-vinge.profile_pic_url = "https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/profile_pics/000/000/008/original/Vinge.jpg"
-vinge.cover_pic_url = "https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/cover_pics/no-cover.png"
+vinge_pic = vinge.profile_pic_from_url("https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/profile_pics/000/000/008/original/Vinge.jpg")
+vinge.cover_pic_from_url("https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/cover_pics/no-cover.png")
 vinge.birthday = "1944-10-02"
 vinge.save!
 
 vonnegut = User.create!(fname: "Kurt", lname: "Vonnegut", email: "vonnegut@domain.com", password: "password")
-vonnegut.profile_pic_url = "https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/profile_pics/000/000/009/original/Vonnegut.jpg"
-vonnegut.cover_pic_url = "https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/cover_pics/no-cover.png"
+vonnegut_pic = vonnegut.profile_pic_from_url("https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/profile_pics/000/000/009/original/Vonnegut.jpg")
+vonnegut.cover_pic_from_url("https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/cover_pics/no-cover.png")
 vonnegut.birthday = "1922-11-11"
 vonnegut.save!
 
 stephenson = User.create!(fname: "Neal", lname: "Stephenson", email: "stephenson@domain.com", password: "password")
-stephenson.profile_pic_url = "https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/profile_pics/000/000/010/original/Stephenson.jpg"
-stephenson.cover_pic_url = "https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/cover_pics/no-cover.png"
+stephenson_pic = stephenson.profile_pic_from_url("https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/profile_pics/000/000/010/original/Stephenson.jpg")
+stephenson.cover_pic_from_url("https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/cover_pics/no-cover.png")
 stephenson.birthday = "1959-10-31"
 stephenson.save!
 
 grossman = User.create!(fname: "Lev", lname: "Grossman", email: "grossman@domain.com", password: "password")
-grossman.profile_pic_url = "https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/profile_pics/000/000/011/original/Grossman.jpg"
-grossman.cover_pic_url = "https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/cover_pics/no-cover.png"
+grossman_pic = grossman.profile_pic_from_url("https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/profile_pics/000/000/011/original/Grossman.jpg")
+grossman.cover_pic_from_url("https://s3-us-west-1.amazonaws.com/facebookclone-pro/users/cover_pics/no-cover.png")
 grossman.birthday = "1969-06-26"
 grossman.save!
 
@@ -272,6 +266,19 @@ grossman_posts = [
                   "Apparently if you’re enough of a power nerd, there is nothing that cannot be flowcharted."
 ]
 
+author_pics = [
+  dfw_pic,
+  wilde_pic,
+  adams_pic,
+  sanderson_pic,
+  salinger_pic,
+  plath_pic,
+  vinge_pic,
+  vonnegut_pic,
+  stephenson_pic,
+  grossman_pic
+]
+
 post_strings = [
                 dfw_posts,
                 wilde_posts,
@@ -285,7 +292,14 @@ post_strings = [
                 grossman_posts
               ]
 
-# iterate 2-11
-# loop through all posts in the nested array at i
-# create post using string as body, use i as authorid and host_id
 # set created at to be some date.
+
+(2..11).each do |author_id|
+  post_strings[author_id - 2].each do |author_quote|
+      post = Post.create!(
+        { body: author_quote, author_id: author_id, host_id: author_id, thumbnail_file_name: nil, thumbnail_content_type: nil, thumbnail_file_size: nil, thumbnail_updated_at: nil }
+      )
+      post.thumbnail_from_url(author_pics[author_id - 2])
+      post.save!
+    end
+end

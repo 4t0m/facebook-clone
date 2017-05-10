@@ -64,4 +64,9 @@ class Post < ActiveRecord::Base
 
     "#{hours}:#{minutes}#{status}"
   end
+
+  def thumbnail_from_url(url)
+    self.thumbnail = URI.parse(url)
+    url
+  end
 end

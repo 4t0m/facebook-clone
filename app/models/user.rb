@@ -8,14 +8,12 @@
 #  email                    :string           not null
 #  password_digest          :string           not null
 #  session_token            :string           not null
-#  profile_pic_url          :string
 #  created_at               :datetime         not null
 #  updated_at               :datetime         not null
 #  gender                   :string
 #  home_town                :string
 #  relationship             :string
 #  workplace                :string
-#  cover_pic_url            :string
 #  birthday                 :date
 #  school                   :string
 #  current_city             :string
@@ -87,8 +85,18 @@ class User < ActiveRecord::Base
     profile_pic.to_s
   end
 
+  def profile_pic_from_url(url)
+    self.profile_pic = URI.parse(url)
+    url
+  end
+
   def cover_pic_url
     cover_pic.to_s
+  end
+
+  def cover_pic_from_url(url)
+    self.cover_pic = URI.parse(url)
+    url
   end
 
   def friends
