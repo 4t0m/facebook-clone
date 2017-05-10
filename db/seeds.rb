@@ -300,6 +300,7 @@ post_strings = [
         { body: author_quote, author_id: author_id, host_id: author_id, thumbnail_file_name: nil, thumbnail_content_type: nil, thumbnail_file_size: nil, thumbnail_updated_at: nil }
       )
       post.thumbnail_from_url(author_pics[author_id - 2])
+      post.created_at = (rand * 10).days.ago
       post.save!
-    end
+  end
 end
