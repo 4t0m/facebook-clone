@@ -15,9 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   //TODO Remove some of this (window asssignments)
-  window.login = SessionApiUtil.login;
-  window.signup = SessionApiUtil.signup;
-  window.logout = SessionApiUtil.logout;
   window.store = store;
 
 
